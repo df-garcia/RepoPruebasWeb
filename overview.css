@@ -79,3 +79,13 @@ body{
 .table td {
   text-align: center;   
 }
+
+#btn-summary {
+  border-bottom-style: solid;
+  border-bottom-color: #FEBE80;
+}
+
+#btn-activity:hover {
+  border-bottom-style: solid;
+  border-bottom-color: #3D5A5B;
+}

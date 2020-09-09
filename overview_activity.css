@@ -114,7 +114,16 @@ ul.timeline > li:before {
   z-index: 400;
 }
 
-
 a:hover {
   text-decoration:none;
+}
+
+#btn-summary:hover {
+  border-bottom-style: solid;
+  border-bottom-color: #3D5A5B;
+}
+
+#btn-activity {
+  border-bottom-style: solid;
+  border-bottom-color: #FEBE80;
 }
