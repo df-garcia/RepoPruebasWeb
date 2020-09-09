@@ -20,12 +20,13 @@ li a {
   margin-right: 0.8rem;
 }
 
-#foto {
+.foto {
   height: 35px;
   width: 35px;
   display: block;
   border-radius: 50%;
   background-size: contain;
+  float: right;
 }
 
 .barar .course-title {
@@ -34,4 +35,166 @@ li a {
 
 .barar .course-bar {
   margin-top: 5px;
+}
+
+#detail-section {
+  margin-top: 30px;
+}
+
+.state {
+  align-items: ri;
+}
+
+.estado {
+  background-color: rgba(60, 160, 60, 0.9);
+  padding: 4px;
+  width: 6rem;
+  font-size: x-small;
+  color: white;
+  text-align: right;
+  align-self: center;
+  right: 0;
+}
+
+.left-card {
+  background-color: #febeb0;
+  padding-top: 20px;
+}
+
+.label {
+  font-size: small;
+  margin-bottom: 5px;
+  font-weight: 645;
+}
+
+.ans {
+  font-size: small;
+  margin-bottom: 15px;
+  padding-left: 8px;
+}
+
+.main-info {
+  padding-left: 20px;
+  margin-top: -5px;
+}
+
+.mains {
+  margin-bottom: 10rem;
+}
+
+.main-info h4 {
+  margin-top: 20px;
+}
+
+.code {
+  font-size: large;
+  font-weight: 400;
+  color: rgb(97, 97, 97);
+}
+
+.description {
+  font-size: 0.85rem;
+  padding-top: 10px;
+}
+
+.fact-card {
+  background-color: #3d5a5b;
+  margin-left: 6px;
+  margin-right: 6px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 0.75rem;
+  color: #f7f1ed;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.card-cont {
+  font-size: 0.85rem;
+  color: #f7f1ed;
+  text-transform: uppercase;
+}
+
+.lists {
+  margin: 0;
+}
+
+.links-title {
+  font-size: 1rem;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.links-text {
+  font-size: 0.85rem;
+}
+
+.list-user {
+  height: 23px;
+  width: 23px;
+  display: block;
+  border-radius: 50%;
+  background-size: contain;
+}
+
+.user-name {
+  font-size: 0.85rem;
+}
+
+.comment-photo {
+  height: 45px;
+  width: 45px;
+  display: block;
+  border-radius: 50%;
+  background-size: contain;
+  margin-left: 8px;
+}
+
+.comments-title {
+  margin-bottom: 1em;
+}
+
+.comment {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.input-comment {
+  width: 92%;
+  margin-left: 12px;
+  font-size: 0.85rem;
+}
+
+.comment-message {
+  width: 90%;
+  margin-left: 14px;
+}
+
+.comment-message p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.comment-author {
+  font-weight: 600;
+}
+
+.date {
+  font-style: italic;
+  font-size: 0.7rem;
+}
+
+.reply {
+  height: 18px;
+  width: 18px;
+  display: block;
+  border-radius: 50%;
+  background-size: contain;
+}
+
+.com2 {
+  margin-left: 50px;
 }
