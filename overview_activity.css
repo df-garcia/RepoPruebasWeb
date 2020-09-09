@@ -6,20 +6,6 @@
   color: white;
 }
 
-/*TAREA LECCION*/
-.tareaLeccion {
-  display: inline;
-}
-/*ESQUINAS REDONDAS*/
-#esquinasRedondas {
-  border-radius: 25px;
-}
-
-/*HOVER RECURSOS DENTRO DE MODAL*/
-a[id="hoverTareas"]:hover {
-  text-decoration: underline;
-}
-
 #conectate-img {
   height: 35px;
   padding-left: 0.5rem;
@@ -51,14 +37,14 @@ li a {
 }
 
 .chart-container {
-  width: 280px;
+  width: 250px;
   height: 160px;
   margin-top: 0px;
   padding-top: 0px;
 }
 
 .card {
-  width: 330px;
+  width: 325px;
   height: 220px;
 }
 
@@ -94,12 +80,50 @@ body {
   text-align: center;
 }
 
-#btn-summary {
-  border-bottom-style: solid;
-  border-bottom-color: #febe80;
+ul.timeline {
+  list-style-type: none;
+  position: relative;
 }
 
-#btn-activity:hover {
+ul.timeline:before {
+  content: " ";
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+ul.timeline > li:before {
+  content: " ";
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #22c0e8;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+
+a:hover {
+  text-decoration:none;
+}
+
+#btn-summary:hover {
   border-bottom-style: solid;
-  border-bottom-color: #3d5a5b;
+  border-bottom-color: #3D5A5B;
+}
+
+#btn-activity {
+  border-bottom-style: solid;
+  border-bottom-color: #FEBE80;
 }

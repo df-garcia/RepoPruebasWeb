@@ -20,7 +20,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      media="all"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/24019aba15.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Hello, world!</title>
   </head>
   <body>
@@ -84,7 +92,7 @@
                 <li class="nav-item">
                   <a
                     class="nav-link disabled"
-                    style="font-size: small;"
+                    style="font-size: small"
                     href="./overview.html"
                     >Overview</a
                   >
@@ -92,7 +100,7 @@
                 <li class="nav-item">
                   <a
                     class="nav-link active"
-                    style="font-size: small;"
+                    style="font-size: small"
                     href="./resources.html"
                     >Resources</a
                   >
@@ -100,24 +108,18 @@
                 <li class="nav-item">
                   <a
                     class="nav-link disabled"
-                    style="font-size: small;"
+                    style="font-size: small"
                     href="./weeks.html"
                     >Weeks</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a
-                    class="nav-link disabled"
-                    style="font-size: small;"
-                    href="#"
+                  <a class="nav-link disabled" style="font-size: small" href="#"
                     >People</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a
-                    class="nav-link disabled"
-                    style="font-size: small;"
-                    href="#"
+                  <a class="nav-link disabled" style="font-size: small" href="#"
                     >Settings</a
                   >
                 </li>
@@ -126,8 +128,348 @@
           </div>
         </section>
       </div>
-    </main>
+      <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+          <div class="sidebar-header">
+            <h4 class="text-center">Lecciones</h4>
+          </div>
 
+          <ul class="list-unstyled components">
+            <p class="text-center">Todas las lecciones</p>
+            <li class="active">
+              <a
+                href="#leccion1"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="dropdown-toggle"
+                >Lección 1</a
+              >
+              <ul class="collapse list-unstyled" id="leccion1">
+                <li>
+                  <a href="#">Lectura HTML</a>
+                </li>
+                <li>
+                  <a href="#">Lectura CSS</a>
+                </li>
+                <li>
+                  <a href="#">Ejercicios</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#leccion2"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="dropdown-toggle"
+                >Lección 2</a
+              >
+              <ul class="collapse list-unstyled" id="leccion2">
+                <li>
+                  <a href="#">Bootstrap</a>
+                </li>
+                <li>
+                  <a href="#">Ejercicios de maquetación</a>
+                </li>
+                <li>
+                  <a href="#">Sitios Web Responsive</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="#leccion3"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="dropdown-toggle"
+                >Lección 3</a
+              >
+              <ul class="collapse list-unstyled" id="leccion3">
+                <li>
+                  <a href="#">JavaScript</a>
+                </li>
+                <li>
+                  <a href="#">Funciones Arrow</a>
+                </li>
+                <li>
+                  <a href="#">Promises</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="list-unstyled CTAs">
+            <li>
+              <a href="#" class="download"
+                ><i class="fas fa-plus" style="padding-right: 10px"></i
+                >Añadir</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+              <span>Menú lateral</span>
+            </button>
+            <div class="container-fluid">
+              <button
+                class="btn btn-dark d-inline-block d-lg-none ml-auto"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              ></button>
+              <!--Botones de la parte derecha de la página-->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <button
+                      type="button"
+                      class="btn text-center"
+                      id="margenBotones"
+                    >
+                      <i class="fas fa-plus" style="padding-right: 5px"></i>
+                      Añadir lista de tareas
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="btn" type="button" id="margenBotones">
+                      <i class="fas fa-eye"></i>
+                      Vista
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!--Recursos a mostrar-->
+          <h4>Recursos</h4>
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link"
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="false"
+                    aria-controls="collapseOne"
+                  >
+                    Lección 1
+                  </button>
+                </h5>
+              </div>
+
+              <div
+                id="collapseOne"
+                class="collapse show"
+                aria-labelledby="headingOne"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <div class="tareaLeccion">
+                    <i style="color: red" class="fab fa-html5"></i>
+                    <input
+                      type="radio"
+                      class="radio2"
+                      name="test2"
+                      id="b1"
+                      checked
+                    />
+                    <span
+                      style="background-color: rgb(98, 216, 98)"
+                      class="badge badge-secondary"
+                      >Responsable</span
+                    >
+                    <a href="#" id="hoverTareas"
+                      >Lectura sobre HTML, conceptos básicos</a
+                    >
+
+                    <select class="custom-select-sm" id="esquinasRedondas">
+                      <option selected>Estado</option>
+                      <option value="1">Listo para montaje</option>
+                      <option value="2">Pendiente</option>
+                      <option value="2">En edición</option>
+                      <option value="2">En plataforma</option>
+                      <option value="2">Eliminar de Coursera</option>
+                      <option value="2">Escaleta en construcción</option>
+                      <option value="2">
+                        Para revisión del equipo docente
+                      </option></select
+                    ><br /><br />
+                    <i class="fab fa-css3" style="color: blue"></i>
+                    <input
+                      type="radio"
+                      class="radio2"
+                      name="test2"
+                      id="b1"
+                      checked
+                    />
+                    <span
+                      style="background-color: rgb(98, 216, 98)"
+                      class="badge badge-secondary"
+                      >Responsable</span
+                    >
+                    <a href="#" id="hoverTareas"
+                      >Lectura sobre CSS, selectores</a
+                    >
+
+                    <select class="custom-select-sm" id="esquinasRedondas">
+                      <option selected>Estado</option>
+                      <option value="1">Listo para montaje</option>
+                      <option value="2">Pendiente</option>
+                      <option value="2">En edición</option>
+                      <option value="2">En plataforma</option>
+                      <option value="2">Eliminar de Coursera</option>
+                      <option value="2">Escaleta en construcción</option>
+                      <option value="2">
+                        Para revisión del equipo docente
+                      </option></select
+                    ><br /><br />
+                    <button type="button" class="btn text-center">
+                      <i class="fas fa-plus" style="padding-right: 5px"></i>
+                      Añadir una tarea
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Lección 2
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseTwo"
+                class="collapse"
+                aria-labelledby="headingTwo"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <div class="tareaLeccion">
+                    <i
+                      class="fab fa-bootstrap"
+                      style="color: rgb(168, 5, 168)"
+                    ></i>
+                    <input
+                      type="radio"
+                      class="radio2"
+                      name="test2"
+                      id="b1"
+                      checked
+                    />
+                    <span
+                      style="background-color: rgb(98, 216, 98)"
+                      class="badge badge-secondary"
+                      >Responsable</span
+                    >
+                    <a href="#" id="hoverTareas"
+                      >Framework Bootstrap, sistema de grilla</a
+                    >
+
+                    <select class="custom-select-sm" id="esquinasRedondas">
+                      <option selected>Estado</option>
+                      <option value="1">Listo para montaje</option>
+                      <option value="2">Pendiente</option>
+                      <option value="2">En edición</option>
+                      <option value="2">En plataforma</option>
+                      <option value="2">Eliminar de Coursera</option>
+                      <option value="2">Escaleta en construcción</option>
+                      <option value="2">
+                        Para revisión del equipo docente
+                      </option></select
+                    ><br /><br />
+                    <button type="button" class="btn text-center">
+                      <i class="fas fa-plus" style="padding-right: 5px"></i>
+                      Añadir una tarea
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Lección 3
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseThree"
+                class="collapse"
+                aria-labelledby="headingThree"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <div class="tareaLeccion">
+                    <i
+                      class="fab fa-js-square"
+                      style="color: rgba(248, 228, 48, 0.863)"
+                    ></i>
+                    <input
+                      type="radio"
+                      class="radio2"
+                      name="test2"
+                      id="b1"
+                      checked
+                    />
+                    <span
+                      style="background-color: rgb(98, 216, 98)"
+                      class="badge badge-secondary"
+                      >Responsable</span
+                    >
+                    <a href="#" id="hoverTareas"
+                      >Lectura sobre HTML, conceptos básicos</a
+                    >
+
+                    <select class="custom-select-sm" id="esquinasRedondas">
+                      <option selected>Estado</option>
+                      <option value="1">Listo para montaje</option>
+                      <option value="2">Pendiente</option>
+                      <option value="2">En edición</option>
+                      <option value="2">En plataforma</option>
+                      <option value="2">Eliminar de Coursera</option>
+                      <option value="2">Escaleta en construcción</option>
+                      <option value="2">
+                        Para revisión del equipo docente
+                      </option>
+                    </select>
+                    <br /><br />
+                    <button type="button" class="btn text-center">
+                      <i class="fas fa-plus" style="padding-right: 5px"></i>
+                      Añadir una tarea
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -143,5 +485,12 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#sidebarCollapse").on("click", function () {
+          $("#sidebar").toggleClass("active");
+        });
+      });
+    </script>
   </body>
 </html>
