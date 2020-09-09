@@ -27,3 +27,45 @@ li a {
   border-radius: 50%;
   background-size: contain;
 }
+
+.course-card {
+  background-color: #f4ebe6;
+  margin: 7px;
+  padding: 15px;
+  border-radius: 7px;
+}
+
+.course-link,.course-link:hover{
+  color: black; 
+}
+
+.course-body {
+  background-color: #f7f1ed;
+  padding-top: 5px;
+}
+
+.course-footer {
+  padding-top: 5px;
+}
+
+.courses-header {
+  margin-top: 10px;
+}
+
+.categories-menu {
+  background-color: #f3f3f3;
+}
+
+.categories-header {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.mini-member {
+  height: 30px;
+  width: 30px;
+  display: block;
+  border-radius: 50%;
+  background-size: contain;
+}
