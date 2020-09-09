@@ -1,0 +1,82 @@
+body{
+    overflow-x:hidden;
+} 
+/** Background **/
+.carousel-item img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   
+}
+
+.carousel-item{
+    height: 100vh;
+}
+
+.behind{
+    position:relative;
+}
+
+.carousel{
+
+    display:block;
+    z-index: 1;
+}
+/** end-Background **/
+.front{
+    display:block;
+    z-index:2;
+    position:absolute;
+    background-color: rgba(240,255,240, 0.8);
+    height: 100%;
+    width: 100%;
+
+}
+
+/** Navbar **/
+.navbar {
+    background-color: #2f365f;
+    position:absolute;
+    height:9%;
+  }
+
+#conectate-img {
+    height: 35px;
+    padding-left: 0.5rem;
+  }
+/**Sign in**/
+.card{
+    margin-top:5%;
+    margin-bottom:5%;
+    height:50%;
+    width: 30%;
+    margin-left: 5%;
+    margin-right: 5%;
+    position:relative !important;
+}
+
+form{
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: calc(12px + 0.5vw);
+}
+
+.row img{
+    margin-top:15%;
+    width:50%;
+    height: 50%;
+}
+
+.signup{
+    font-size: calc(12px + 0.5vw);
+    text-align: center;
+    margin-top:3%;
+    padding-top:1%;
+    padding-bottom: 3%;
+    width:100%;
+    background-color: #2f365f;
+    color:whitesmoke;
+    border-radius: 100px;
+}
