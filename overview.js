@@ -26,7 +26,7 @@ $(document).ready(function () {
         position: "left",
         onClick: function (evt, item) {
           console.log(item.text);
-          $("exampleModalLabel").text("Mine Tasks - " + item.text);
+          $("#exampleModalLabel").text("Mine Tasks - " + item.text);
           $("#exampleModal").modal("show");
         },
         onHover: function (e) {
@@ -65,7 +65,7 @@ $(document).ready(function () {
         position: "left",
         onClick: function (evt, item) {
           console.log(item.text);
-          $("exampleModalLabel").text("All Tasks - " + item.text);
+          $("#exampleModalLabel").text("All Tasks - " + item.text);
           $("#exampleModal").modal("show");
         },
         onHover: function (e) {
