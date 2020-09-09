@@ -20,8 +20,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
 
-    <title>Hello, world!</title>
+    <title>Overview</title>
   </head>
   <body>
     <header>
@@ -84,7 +89,7 @@
                 <li class="nav-item">
                   <a
                     class="nav-link active"
-                    style="font-size: small;"
+                    style="font-size: small"
                     href="./overview.html"
                     >Overview</a
                   >
@@ -92,7 +97,7 @@
                 <li class="nav-item">
                   <a
                     class="nav-link disabled"
-                    style="font-size: small;"
+                    style="font-size: small"
                     href="./resources.html"
                     >Resources</a
                   >
@@ -100,24 +105,18 @@
                 <li class="nav-item">
                   <a
                     class="nav-link disabled"
-                    style="font-size: small;"
+                    style="font-size: small"
                     href="./weeks.html"
                     >Weeks</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a
-                    class="nav-link disabled"
-                    style="font-size: small;"
-                    href="#"
+                  <a class="nav-link disabled" style="font-size: small" href="#"
                     >People</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a
-                    class="nav-link disabled"
-                    style="font-size: small;"
-                    href="#"
+                  <a class="nav-link disabled" style="font-size: small" href="#"
                     >Settings</a
                   >
                 </li>
@@ -126,13 +125,236 @@
           </div>
         </section>
       </div>
+      <br />
+      <div class="row justify-content-center">
+        <div class="col-12" id="overview-control">
+          <h4 style="margin-left: 0px">Overview</h4>
+          <nav class="nav nav-pills flex-column flex-sm-row">
+            <a
+              class="flex-sm-fill text-sm-center nav-link active"
+              style="font-size: small"
+              href="overview.html"
+            >
+              Summary
+            </a>
+            <a
+              class="flex-sm-fill text-sm-center nav-link disabled"
+              style="font-size: small"
+              href="overview_activity.html"
+            >
+              Activity
+            </a>
+          </nav>
+        </div>
+        <br />
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="container-fluid">
+            <div class="row justify-content-center" id="overview-tasks">
+              <div
+                class="col-6 center-block"
+                style="border-right: 2px solid #ccc"
+              >
+                <h5 style="margin-left: 11px; margin-bottom: 20px">Tasks</h5>
+                <div class="container-fluid">
+                  <div class="row justify-content-center">
+                    <div
+                      class="col-6 d-flex justify-content-center"
+                      style="border-right: 1px solid #ccc"
+                    >
+                      <div class="card border-light">
+                        <div class="card-body">
+                          <p style="color: grey; padding-left: 10px">Mine</p>
+                          <div class="chart-container">
+                            <canvas
+                              id="chart-line"
+                              class="chartjs-render-monitor"
+                            >
+                            </canvas>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center">
+                      <div class="card border-light">
+                        <div class="card-body">
+                          <p style="color: grey; padding-left: 10px">
+                            All Tasks
+                          </p>
+                          <div class="chart-container">
+                            <canvas
+                              id="chart-line2"
+                              class="chartjs-render-monitor"
+                            >
+                            </canvas>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-6" style="border-right: 0.5px solid #ccc">
+                      <h5 style="margin-left: 0px; margin-bottom: 20px">
+                        Digest
+                      </h5>
+                      <div class="list-group">
+                        <a
+                          href="#"
+                          class="list-group-item list-group-item-action justify-content-between align-items-center d-flex"
+                        >
+                          Tasks created yesterday
+                          <span class="badge badge-secondary badge-pill">
+                            14
+                          </span>
+                        </a>
+                        <a
+                          href="#"
+                          class="list-group-item list-group-item-action justify-content-between align-items-center d-flex"
+                        >
+                          Tasks completed yesterday
+                          <span class="badge badge-secondary badge-pill">
+                            2
+                          </span>
+                        </a>
+                        <a
+                          href="#"
+                          class="list-group-item list-group-item-action justify-content-between align-items-center d-flex"
+                        >
+                          Unreaded messages
+                          <span class="badge badge-secondary badge-pill">
+                            1
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-6" style="padding-left: 30px">
+                      <h5 style="margin-bottom: 20px">Breakdown</h5>
+                      <table class="table table-sm table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">User</th>
+                            <th scope="col">Active Tasks</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th style="color: grey; font-weight: normal">
+                              Nicolás Potes
+                            </th>
+                            <td style="color: grey">5</td>
+                          </tr>
+                          <tr>
+                            <th style="color: grey; font-weight: normal">
+                              Mario Hurtado
+                            </th>
+                            <td style="color: grey">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="container-fluid">
+            <div class="row" id="overview-tasks">
+              <div class="col-6" style="border-right: 2px solid #ccc">
+                <br />
+                <h5 style="margin-left: 11px; margin-bottom: 20px">Weeks</h5>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div
+                      class="col-6 d-flex justify-content-center"
+                      style="border-right: 1px solid #ccc"
+                    >
+                      <div class="card border-light">
+                        <div class="card-body">
+                          <p style="color: grey; padding-left: 10px">Mine</p>
+                          <div class="chart-container">
+                            <canvas
+                              id="chart-line3"
+                              class="chartjs-render-monitor"
+                            >
+                            </canvas>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center">
+                      <div class="card border-light">
+                        <div class="card-body">
+                          <p style="color: grey; padding-left: 10px">
+                            All Weeks
+                          </p>
+                          <div class="chart-container">
+                            <canvas
+                              id="chart-line4"
+                              class="chartjs-render-monitor"
+                            >
+                            </canvas>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <br />
     </main>
 
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" data-dismiss="modal" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -143,5 +365,7 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="overview.js"></script>
   </body>
 </html>
