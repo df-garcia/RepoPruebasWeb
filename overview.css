@@ -6,6 +6,20 @@
   color: white;
 }
 
+/*TAREA LECCION*/
+.tareaLeccion {
+  display: inline;
+}
+/*ESQUINAS REDONDAS*/
+#esquinasRedondas {
+  border-radius: 25px;
+}
+
+/*HOVER RECURSOS DENTRO DE MODAL*/
+a[id="hoverTareas"]:hover {
+  text-decoration: underline;
+}
+
 #conectate-img {
   height: 35px;
   padding-left: 0.5rem;
@@ -72,20 +86,20 @@ li a {
   margin-right: 10px;
 }
 
-body{
+body {
   overflow-x: hidden;
 }
 
 .table td {
-  text-align: center;   
+  text-align: center;
 }
 
 #btn-summary {
   border-bottom-style: solid;
-  border-bottom-color: #FEBE80;
+  border-bottom-color: #febe80;
 }
 
 #btn-activity:hover {
   border-bottom-style: solid;
-  border-bottom-color: #3D5A5B;
+  border-bottom-color: #3d5a5b;
 }

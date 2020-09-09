@@ -26,6 +26,12 @@
       crossorigin="anonymous"
     ></script>
 
+    <!--SCRIPT FONT AWESOME-->
+    <script
+      src="https://kit.fontawesome.com/24019aba15.js"
+      crossorigin="anonymous"
+    ></script>
+
     <title>Overview</title>
   </head>
   <body>
@@ -97,7 +103,7 @@
                 <li class="nav-item">
                   <a
                     class="nav-link disabled"
-                    style="font-size: small;"
+                    style="font-size: small"
                     href="./resources.html"
                     >Resources</a
                   >
@@ -329,7 +335,7 @@
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -342,7 +348,60 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <div class="tareaLeccion">
+              <i style="color: red" class="fab fa-html5"></i>
+              <input type="radio" class="radio2" name="test2" id="b1" checked />
+              <span
+                style="background-color: rgb(98, 216, 98)"
+                class="badge badge-secondary"
+                >Responsable</span
+              >
+              <a href="#" style="color: black" id="hoverTareas"
+                >Lectura sobre HTML, conceptos básicos</a
+              >
+
+              <select class="custom-select-sm" id="esquinasRedondas">
+                <option selected>Estado</option>
+                <option value="1">Listo para montaje</option>
+                <option value="2">Pendiente</option>
+                <option value="2">En edición</option>
+                <option value="2">En plataforma</option>
+                <option value="2">Eliminar de Coursera</option>
+                <option value="2">Escaleta en construcción</option>
+                <option value="2">
+                  Para revisión del equipo docente
+                </option></select
+              ><br /><br />
+              <i class="fab fa-css3" style="color: blue"></i>
+              <input type="radio" class="radio2" name="test2" id="b1" checked />
+              <span
+                style="background-color: rgb(98, 216, 98)"
+                class="badge badge-secondary"
+                >Responsable</span
+              >
+              <a href="#" style="color: black" id="hoverTareas"
+                >Lectura sobre CSS, selectores</a
+              >
+
+              <select class="custom-select-sm" id="esquinasRedondas">
+                <option selected>Estado</option>
+                <option value="1">Listo para montaje</option>
+                <option value="2">Pendiente</option>
+                <option value="2">En edición</option>
+                <option value="2">En plataforma</option>
+                <option value="2">Eliminar de Coursera</option>
+                <option value="2">Escaleta en construcción</option>
+                <option value="2">
+                  Para revisión del equipo docente
+                </option></select
+              ><br /><br />
+              <button type="button" class="btn text-center">
+                <i class="fas fa-plus" style="padding-right: 5px"></i>
+                Añadir una tarea
+              </button>
+            </div>
+          </div>
           <div class="modal-footer">
             <button
               type="button"
@@ -351,7 +410,9 @@
             >
               Close
             </button>
-            <button type="button" data-dismiss="modal" class="btn btn-primary">Save</button>
+            <button type="button" data-dismiss="modal" class="btn btn-primary">
+              Save
+            </button>
           </div>
         </div>
       </div>
