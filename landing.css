@@ -1,6 +1,8 @@
-body{
-    overflow-x:hidden;
-} 
+html,body
+{
+    overflow-x: hidden; 
+    overflow-y: hidden;
+}
 /** Background **/
 .carousel-item img{
    height: 100%;
@@ -45,14 +47,17 @@ body{
     padding-left: 0.5rem;
   }
 /**Sign in**/
-.card{
-    margin-top:5%;
-    margin-bottom:5%;
-    height:50%;
-    width: 30%;
-    margin-left: 5%;
-    margin-right: 5%;
-    position:relative !important;
+
+@media (max-height:800px){
+    .card{
+        margin-top:5%;
+        margin-bottom:5%;
+        height:50%;
+        width: 30%;
+        margin-left: 5%;
+        margin-right: 5%;
+        position:relative !important;
+    }
 }
 
 form{
