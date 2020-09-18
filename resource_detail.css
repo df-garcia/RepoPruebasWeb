@@ -41,21 +41,6 @@ li a {
   margin-top: 30px;
 }
 
-.state {
-  align-items: ri;
-}
-
-.estado {
-  background-color: rgba(60, 160, 60, 0.9);
-  padding: 4px;
-  width: 6rem;
-  font-size: x-small;
-  color: white;
-  text-align: right;
-  align-self: center;
-  right: 0;
-}
-
 .left-card {
   background-color: #febeb0;
   padding-top: 20px;
@@ -103,6 +88,19 @@ li a {
   margin-right: 6px;
   padding-top: 5px;
   text-align: center;
+  height: 50px;
+}
+
+.state {
+  align-items: ri;
+}
+
+.estado {
+  background-color: rgba(60, 160, 60, 0.9);
+  width: 6rem;
+  font-size: x-small;
+  color: white;
+  align-self: center;
 }
 
 .card-title {
@@ -115,11 +113,11 @@ li a {
 .card-cont {
   font-size: 0.85rem;
   color: #f7f1ed;
-  text-transform: uppercase;
 }
 
 .lists {
   margin: 0;
+  margin-bottom: -12px;
 }
 
 .links-title {
@@ -197,4 +195,8 @@ li a {
 
 .com2 {
   margin-left: 50px;
+}
+
+.dropdown-item {
+  font-size: 0.85rem;
 }

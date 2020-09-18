@@ -20,7 +20,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./resource_detail.js"></script>
     <title>Hello, world!</title>
   </head>
   <body>
@@ -93,16 +108,16 @@
                   <a
                     class="nav-link disabled"
                     style="font-size: small;"
-                    href="./resources.html"
-                    >Resources</a
+                    href="./weeks.html"
+                    >Weeks</a
                   >
                 </li>
                 <li class="nav-item">
                   <a
                     class="nav-link disabled"
                     style="font-size: small;"
-                    href="./weeks.html"
-                    >Weeks</a
+                    href="./resources.html"
+                    >Items</a
                   >
                 </li>
                 <li class="nav-item">
@@ -130,17 +145,7 @@
             <div class="col-11">
               <div class="row">
                 <div class="col-3 mains">
-                  <div class="state float-right">
-                    <p class="estado">En plataforma</p>
-                  </div>
                   <div class="container left-card float-right">
-                    <p class="label">Assigned To</p>
-                    <p class="ans">
-                      ISIS3710 <br />
-                      Week 2 <br />
-                      Lesson 1
-                    </p>
-                    <hr />
                     <p class="label">Date</p>
                     <p class="ans">Wed 9th September 2020</p>
                     <hr />
@@ -151,7 +156,7 @@
                         alt=""
                         class="list-user d-inline"
                       />
-                      Jose Bocanegra <span class="date">(1st Aug, 2019)</span>
+                      Jose Bocanegra
                     </p>
                     <hr />
                     <p class="label">Updated By</p>
@@ -162,18 +167,33 @@
                         alt=""
                         class="list-user d-inline"
                       />
-                      Santiago Bolaños
-                      <span class="date">(15th Aug, 2019)</span>
+                      Santiago Bolaños <span class="date">(1st Aug, 2019)</span>
                     </p>
                   </div>
                 </div>
                 <div class="col-9 main-info">
-                  <h4 class="d-inline">
+                  <h4
+                    onclick="listenForDoubleClick(this);"
+                    onblur="this.contentEditable=false;"
+                    class="d-inline"
+                  >
                     Introducción a selectores CSS
-                    <span class="code">MT1ISW_V1</span>
                   </h4>
+                  <span class="code">MT1ISW_V1</span>
+                  <a
+                    href=""
+                    class="btn-rounded"
+                    data-toggle="modal"
+                    data-target="#elegantModalForm"
+                    ><img src="./static/edit.png" alt=""
+                  /></a>
+
                   <img src="./static/vimeo.png" alt="" class="foto d-inline" />
-                  <p class="description text-justify">
+                  <p
+                    onclick="listenForDoubleClick(this);"
+                    onblur="this.contentEditable=false;"
+                    class="description text-justify"
+                  >
                     A través de este video, el estudiante conocerá de qué se
                     trata el curso y cómo se desarrolla, con especial atención
                     al proyecto transversal, que realizarán en equipos de tres
@@ -182,6 +202,27 @@
                   </p>
                   <hr />
                   <div class="row justify-content-center">
+                    <div class="col-2 fact-card estado dropdown">
+                      <a
+                        href="#"
+                        role="button"
+                        id="dropdownMenuLink"
+                        data-toggle="dropdown"
+                      >
+                        <p class="card-title">Estado</p>
+                        <p class="card-cont">En plataforma</p>
+                      </a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">En Plataforma</a>
+                        <a class="dropdown-item" href="#">En Edición</a>
+                        <a class="dropdown-item" href="#"
+                          >Escaleta en contrucción</a
+                        >
+                        <a class="dropdown-item" href="#">Para montaje</a>
+                        <a class="dropdown-item" href="#">Para revisión</a>
+                        <a class="dropdown-item" href="#">Pendiente</a>
+                      </div>
+                    </div>
                     <div class="col-2 fact-card align-self-center">
                       <p class="card-title">Tipo de Recurso</p>
                       <p class="card-cont">Vídeo</p>
@@ -192,11 +233,23 @@
                     </div>
                     <div class="col-2 fact-card align-self-center">
                       <p class="card-title">Duración del Recurso</p>
-                      <p class="card-cont">12 min</p>
+                      <p
+                        onclick="listenForDoubleClick(this);"
+                        onblur="this.contentEditable=false;"
+                        class="card-cont"
+                      >
+                        12 min
+                      </p>
                     </div>
                     <div class="col-2 fact-card align-self-center">
-                      <p class="card-title">Dedicación del Estudiante</p>
-                      <p class="card-cont">18 min</p>
+                      <p class="card-title">Dedicación Estudiante</p>
+                      <p
+                        onclick="listenForDoubleClick(this);"
+                        onblur="this.contentEditable=false;"
+                        class="card-cont"
+                      >
+                        18 min
+                      </p>
                     </div>
                   </div>
                   <hr />
@@ -318,6 +371,113 @@
           </div>
         </section>
       </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="elegantModalForm"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <!--Content-->
+          <div class="modal-content form-elegant">
+            <!--Header-->
+            <div class="modal-header text-center">
+              <h3
+                class="modal-title w-100 dark-grey-text font-weight-bold my-3"
+                id="myModalLabel"
+              >
+                <strong>Sign in</strong>
+              </h3>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body mx-4">
+              <!--Body-->
+              <div class="md-form mb-5">
+                <input
+                  type="email"
+                  id="Form-email1"
+                  class="form-control validate"
+                />
+                <label data-error="wrong" data-success="right" for="Form-email1"
+                  >Your email</label
+                >
+              </div>
+
+              <div class="md-form pb-3">
+                <input
+                  type="password"
+                  id="Form-pass1"
+                  class="form-control validate"
+                />
+                <label data-error="wrong" data-success="right" for="Form-pass1"
+                  >Your password</label
+                >
+                <p class="font-small blue-text d-flex justify-content-end">
+                  Forgot <a href="#" class="blue-text ml-1"> Password?</a>
+                </p>
+              </div>
+
+              <div class="text-center mb-3">
+                <button
+                  type="button"
+                  class="btn blue-gradient btn-block btn-rounded z-depth-1a"
+                >
+                  Sign in
+                </button>
+              </div>
+              <p
+                class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"
+              >
+                or Sign in with:
+              </p>
+
+              <div class="row my-3 d-flex justify-content-center">
+                <!--Facebook-->
+                <button
+                  type="button"
+                  class="btn btn-white btn-rounded mr-md-3 z-depth-1a"
+                >
+                  <i class="fab fa-facebook-f text-center"></i>
+                </button>
+                <!--Twitter-->
+                <button
+                  type="button"
+                  class="btn btn-white btn-rounded mr-md-3 z-depth-1a"
+                >
+                  <i class="fab fa-twitter"></i>
+                </button>
+                <!--Google +-->
+                <button
+                  type="button"
+                  class="btn btn-white btn-rounded z-depth-1a"
+                >
+                  <i class="fab fa-google-plus-g"></i>
+                </button>
+              </div>
+            </div>
+            <!--Footer-->
+            <div class="modal-footer mx-5 pt-3 mb-1">
+              <p class="font-small grey-text d-flex justify-content-end">
+                Not a member? <a href="#" class="blue-text ml-1"> Sign Up</a>
+              </p>
+            </div>
+          </div>
+          <!--/.Content-->
+        </div>
+      </div>
+      <!-- Modal -->
     </main>
   </body>
 </html>
