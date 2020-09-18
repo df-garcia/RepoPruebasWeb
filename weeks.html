@@ -1,379 +1,749 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="weeks.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <link rel="stylesheet" href="weeks.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- JavaScript -->
+    <script src="weeks.js"></script>
 
-  <!-- JavaScript -->
-  <script src="weeks.js"></script>
+    <title>Conecta-TE</title>
+  </head>
 
-  <title>Conecta-TE</title>
-</head>
-
-<body>
-  <!--------Header-------->
-  <header>
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand name" href="home.html"><img id="conectate-img" src="./static/image.png" alt="" /></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-          <li>
-            <a href="#experience" class="nav-link">
-              <img src="https://icon-library.com/images/search-icon-white-png/search-icon-white-png-18.jpg" alt=""
-                class="icon-nav" />
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">
-              <img class="icon-nav" src="./static/plus (1).png" alt="" />
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#hobbies" class="nav-link"><img class="icon-nav" src="./static/bell.png" alt="" /></a>
-          </li>
-          <li class="nav-item">
-            <a href="#education" class="nav-link"><img id="foto" src="./static/portrait-1.jpg" alt="" /></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!--------Main-------->
-  <main>
-    <!--------Navigation menu-------->
-    <div class="container-fluid">
-      <section class="barar">
-        <div class="row course-title">
-          <div class="col-12">
-            <h4>ISIS3710 - Seguimiento Proyecto Coursera</h4>
-          </div>
+  <body>
+    <!--------Header-------->
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand name" href="home.html"
+          ><img id="conectate-img" src="./static/image.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li>
+              <a href="#experience" class="nav-link">
+                <img
+                  src="https://icon-library.com/images/search-icon-white-png/search-icon-white-png-18.jpg"
+                  alt=""
+                  class="icon-nav"
+                />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">
+                <img class="icon-nav" src="./static/plus (1).png" alt="" />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#hobbies" class="nav-link"
+                ><img class="icon-nav" src="./static/bell.png" alt=""
+              /></a>
+            </li>
+            <li class="nav-item">
+              <a href="#education" class="nav-link"
+                ><img id="foto" src="./static/portrait-1.jpg" alt=""
+              /></a>
+            </li>
+          </ul>
         </div>
-        <div class="row course-bar">
-          <div class="col-12">
-            <ul class="nav nav-tabs">
-              <li class="nav-item">
-                <a class="nav-link disabled" style="font-size: small;" href="./overview.html">Overview</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" style="font-size: small;" href="./resources.html">Resources</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" style="font-size: small;" href="./weeks.html">Weeks</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" style="font-size: small;" href="#">People</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" style="font-size: small;" href="#">Settings</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <div class="container-fluid text-center">
-      <div class="row align-items-center">
-        <!--------Left section (week selector) Vertical navbar-------->
-        <div class="col-lg-4 col-md-4 col-sm-12" id="leftMenu">
-          <div class="bg-light">
-            <div class="sidebar-heading"><a id="sidebarHeading" class="btn" role="button" data-toggle="collapse"
-                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                Semanas
-              </a></div>
-            <div class="collapse show" id="collapseExample">
-              <div class="list-group list-group-mine">
-                <a class="list-group-item" href="#">Semana 1</a>
-                <a id="week2" class="list-group-item" href="#">Semana 2</a>
-                <a class="list-group-item" href="#">Semana 3</a>
-                <a class="list-group-item" href="#">Semana 4</a>
-                <a class="list-group-item" href="#">Semana 5</a>
-                <a class="list-group-item" href="#">Semana 6</a>
-                <a class="list-group-item" href="#">Semana 7</a>
-                <a class="list-group-item" href="#">Semana 8</a>
-              </div>
+      </nav>
+    </header>
+    <!--------Main-------->
+    <main>
+      <!--------Navigation menu-------->
+      <div class="container-fluid">
+        <section class="barar">
+          <div class="row course-title">
+            <div class="col-12">
+              <h4>ISIS3710 - Seguimiento Proyecto Coursera</h4>
             </div>
           </div>
-        </div>
+          <div class="row course-bar">
+            <div class="col-12">
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a
+                    class="nav-link disabled"
+                    style="font-size: small"
+                    href="./overview.html"
+                    >Overview</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link disabled"
+                    style="font-size: small"
+                    href="./resources.html"
+                    >Items</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    style="font-size: small"
+                    href="./weeks.html"
+                    >Weeks</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" style="font-size: small" href="#"
+                    >People</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" style="font-size: small" href="#"
+                    >Settings</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!--<div class="container-fluid text-center">-->
+      <!--<div class="row align-items-center">-->
+      <!--------Left section (week selector) Vertical navbar-------->
+      <div class="wrapper">
+        <nav id="sidebar">
+          <div class="sidebar-header">
+            <h4 class="text-center">Semanas</h4>
+          </div>
+
+          <ul class="list-unstyled components">
+            <p class="text-center" style="text-decoration: none">
+              Todas las semanas
+            </p>
+            <li class="active">
+              <a
+                href="#leccion1"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="dropdown-toggle"
+                >Semana 1</a
+              >
+              <ul class="collapse list-unstyled" id="leccion1">
+                <li>
+                  <ul class="collapse list-unstyled">
+                    <a href="#">Bootstrap</a>
+                    <a href="#">Bootstrap</a>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Lectura CSS</a>
+                </li>
+                <li>
+                  <a href="#">Ejercicios</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#leccion2"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="dropdown-toggle"
+                >Semana 2</a
+              >
+              <ul class="collapse list-unstyled" id="leccion2">
+                <li>
+                  <a href="#">Bootstrap</a>
+                </li>
+                <li>
+                  <a href="#">Ejercicios de maquetación</a>
+                </li>
+                <li>
+                  <a href="#">Sitios Web Responsive</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="#leccion3"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="dropdown-toggle"
+                >Semana 3</a
+              >
+              <ul class="collapse list-unstyled" id="leccion3">
+                <li>
+                  <a href="#">JavaScript</a>
+                </li>
+                <li>
+                  <a href="#">Funciones Arrow</a>
+                </li>
+                <li>
+                  <a href="#">Promises</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="list-unstyled CTAs">
+            <a
+              href="#"
+              class="download"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              data-whatever="@mdo"
+              style="padding-top: 5%; padding-bottom: 5%; text-decoration: none"
+              ><i class="fa fa-plus" style="padding-right: 10px"></i>Añadir
+              semana</a
+            >
+          </ul>
+        </nav>
         <!--------Right section (week detail)-------->
-        <div class="col-lg-8 col-md-8 col-sm-12" id="rightMenu">
-          <div class="row align-items-center">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <div id="topBarRightMenu">
-                <h4>Semanas</h4>
-                <button id="addWeek" type="button" class="btn btn-secondary" data-toggle="modal"
-                  data-target="#exampleModal" data-whatever="@mdo"> Añadir semana <i class="fa fa-plus"
-                    aria-hidden="true"></i></button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Añadir nueva semana</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+        <div class="container-fluid text-center" id="rightMenu">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="row align-items-center">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div id="topBarRightMenu">
+                  <button
+                    type="button"
+                    id="sidebarCollapse"
+                    class="btn btn-info"
+                    style="float: left; margin-right: 2%"
+                  >
+                    <i class="fa fa-arrows-h" aria-hidden="true"></i>
+                  </button>
+                  <h4>Semanas</h4>
+                  <!--<button
+                    id="addWeek"
+                    type="button"
+                    class="btn btn-secondary"
+                    data-toggle="modal"
+                    data-target="#exampleModal"
+                    data-whatever="@mdo"
+                  >
+                    Añadir semana <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>-->
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            Añadir nueva semana
+                          </h5>
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label"
+                                >Nombre:</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="recipient-name"
+                              />
+                            </div>
+                            <div class="form-group">
+                              <label for="message-text" class="col-form-label"
+                                >Objetivos:</label
+                              >
+                              <textarea
+                                class="form-control"
+                                id="message-text"
+                              ></textarea>
+                            </div>
+                          </form>
+                          <div class="form-group align-items-center">
+                            <label for="message-text" class="col-form-label"
+                              >Recursos:</label
+                            ><br />
+                            <div class="btn-group">
+                              <button
+                                style="background-color: #f7f1ed; color: black"
+                                type=" button"
+                                class="btn btn-secondary dropdown-toggle"
+                                data-toggle="dropdown"
+                                data-display="static"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-lg-right">
+                                <button class="dropdown-item" type="button">
+                                  (1) Video usabilidad
+                                </button>
+                                <button class="dropdown-item" type="button">
+                                  (2) Lectura UI
+                                </button>
+                                <button class="dropdown-item" type="button">
+                                  (3) Ejercicio usabilidad
+                                </button>
+                              </div>
+                            </div>
                           </div>
-                          <div class="form-group">
-                            <label for="message-text" class="col-form-label">Objetivos:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                          <div class="form-group align-items-center">
+                            <label for="message-text" class="col-form-label"
+                              >Número de semana:</label
+                            ><br />
+                            <div class="btn-group">
+                              <button
+                                style="background-color: #f7f1ed; color: black"
+                                type=" button"
+                                class="btn btn-secondary dropdown-toggle"
+                                data-toggle="dropdown"
+                                data-display="static"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="fa fa-list-ol" aria-hidden="true"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-lg-right">
+                                <button class="dropdown-item" type="button">
+                                  9
+                                </button>
+                                <button class="dropdown-item" type="button">
+                                  10
+                                </button>
+                                <button class="dropdown-item" type="button">
+                                  11
+                                </button>
+                                <button class="dropdown-item" type="button">
+                                  12
+                                </button>
+                                <button class="dropdown-item" type="button">
+                                  13
+                                </button>
+                                <button class="dropdown-item" type="button">
+                                  14
+                                </button>
+                                <button class="dropdown-item" type="button">
+                                  15
+                                </button>
+                                <button class="dropdown-item" type="button">
+                                  16
+                                </button>
+                              </div>
+                            </div>
                           </div>
-                        </form>
-                        <div class="form-group align-items-center">
-                          <label for="message-text" class="col-form-label">Recursos:</label><br />
-                          <div class="btn-group">
-                            <button style="background-color: #f7f1ed;
-                            color: black;" type=" button" class="btn btn-secondary dropdown-toggle"
-                              data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                              <i class="fa fa-bars" aria-hidden="true"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg-right">
-                              <button class="dropdown-item" type="button">(1) Video usabilidad</button>
-                              <button class="dropdown-item" type="button">(2) Lectura UI</button>
-                              <button class="dropdown-item" type="button">(3) Ejercicio usabilidad</button>
+                          <div class="form-group align-items-center">
+                            <label for="message-text" class="col-form-label"
+                              >Fecha inicio/fin:</label
+                            ><br />
+                            <div class="btn-group">
+                              <button
+                                style="background-color: #f7f1ed; color: black"
+                                type=" button"
+                                class="btn btn-secondary dropdown-toggle"
+                                data-toggle="dropdown"
+                                data-display="static"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i
+                                  class="fa fa-calendar-o"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                              <div
+                                class="dropdown-menu dropdown-menu-lg-right"
+                              ></div>
                             </div>
                           </div>
                         </div>
-                        <div class="form-group align-items-center">
-                          <label for="message-text" class="col-form-label">Número de semana:</label><br />
-                          <div class="btn-group">
-                            <button style="background-color: #f7f1ed;
-                            color: black;" type=" button" class="btn btn-secondary dropdown-toggle"
-                              data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                              <i class="fa fa-list-ol" aria-hidden="true"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg-right">
-                              <button class="dropdown-item" type="button">9</button>
-                              <button class="dropdown-item" type="button">10</button>
-                              <button class="dropdown-item" type="button">11</button>
-                              <button class="dropdown-item" type="button">12</button>
-                              <button class="dropdown-item" type="button">13</button>
-                              <button class="dropdown-item" type="button">14</button>
-                              <button class="dropdown-item" type="button">15</button>
-                              <button class="dropdown-item" type="button">16</button>
-                            </div>
-                          </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal"
+                            style="background-color: #f7f1ed; color: black"
+                          >
+                            Cerrar
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            style="background-color: #2f365f"
+                          >
+                            Crear semana
+                          </button>
                         </div>
-                        <div class="form-group align-items-center">
-                          <label for="message-text" class="col-form-label">Fecha inicio/fin:</label><br />
-                          <div class="btn-group">
-                            <button style="background-color: #f7f1ed;
-                            color: black;" type=" button" class="btn btn-secondary dropdown-toggle"
-                              data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                              <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg-right">
-
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                          style="background-color: #f7f1ed; color: black;">Cerrar</button>
-                        <button type="button" class="btn btn-secondary" style="background-color: #2f365f;">Crear
-                          semana</button>
                       </div>
                     </div>
                   </div>
-                </div>
-                <!-------------------->
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-filter" aria-hidden="true"></i>
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Fecha</a>
-                    <a class="dropdown-item" href="#">Nombre</a>
-                    <a class="dropdown-item" href="#">Usuario</a>
+                  <!-------------------->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="fa fa-filter" aria-hidden="true"></i>
+                    </button>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a class="dropdown-item" href="#">Fecha</a>
+                      <a class="dropdown-item" href="#">Nombre</a>
+                      <a class="dropdown-item" href="#">Usuario</a>
+                    </div>
                   </div>
-                </div>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-eye" aria-hidden="true"></i>
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <h6 class="dropdown-header">Ver como</h6>
-                    <a id="aSelected" class="dropdown-item" href="#"><i class="fa fa-list" aria-hidden="true"></i>
-                      Lista</a>
-                    <a class="dropdown-item" href="#"><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</a>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <h6 class="dropdown-header">Ver como</h6>
+                      <a id="aSelected" class="dropdown-item" href="#"
+                        ><i class="fa fa-list" aria-hidden="true"></i> Lista</a
+                      >
+                      <a class="dropdown-item" href="#"
+                        ><i class="fa fa-calendar" aria-hidden="true"></i>
+                        Calendario</a
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <div class="jumbotron">
-                <h1>Semana 2: <i>Usabilidad</i></h1>
-                <h6>7/09/2020 - 11/09/2020</h6>
-                <div style="margin-top: 5px; margin-bottom: 10px;" class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="25"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <button type="button" class="btn btn-light" data-toggle="collapse" data-target="#weekObjective"
-                  aria-expanded="false" aria-controls="weekObjective">
-                  Objetivos
-                </button>
-                <div class="collapse" id="weekObjective">
-                  <div class="card card-body" id="objectiveText">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, blanditiis perferendis? Quis expedita
-                    voluptate maxime nesciunt dicta ipsa sequi ea consequuntur atque, magni sunt dolore natus fuga
-                    aliquid
-                    temporibus voluptates?
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="jumbotron">
+                  <h1>Semana 1: <i>Usabilidad</i></h1>
+                  <h6>7/09/2020 - 11/09/2020</h6>
+                  <div
+                    style="margin-top: 5px; margin-bottom: 10px"
+                    class="progress"
+                  >
+                    <div
+                      class="progress-bar bg-success"
+                      role="progressbar"
+                      style="width: 75%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
                   </div>
-                </div>
-                <hr class="my-4">
-                <h3>Responsables:</h3><br />
-                <div class="process">
-                  <div class="process-row">
-                    <div class="process-step">
-                      <button style="background-color: #f7f1ed;" type="button" class="btn btn-default btn-circle"
-                        disabled="disabled"><i class="fa fa-user fa-3x"></i></button>
-                      <p>Rubby Casallas<br /><i>Profesor</i></p>
-                    </div>
-                    <div class="process-step">
-                      <button style="background-color: #febeb0;" type="button" class="btn btn-default btn-circle"
-                        disabled="disabled"><i class="fa fa-user fa-3x"></i></button>
-                      <p>Carlos Marín<br /><i>Pedagogo</i></p>
-                    </div>
-                    <div class="process-step">
-                      <button style="background-color: #febeb0;" type="button" class="btn btn-default btn-circle"
-                        disabled="disabled"><i class="fa fa-user fa-3x"></i></button>
-                      <p>José Bocanegra<br /><i>Profesor</i></p>
-                    </div>
-                    <div class="process-step">
-                      <button style="background-color: #f7f1ed;" type="button" class="btn btn-default btn-circle"
-                        disabled="disabled"><i class="fa fa-user fa-3x"></i></button>
-                      <p>Violeta Caro<br /><i>Pedagogo</i></p>
+                  <button
+                    type="button"
+                    class="btn btn-light"
+                    data-toggle="collapse"
+                    data-target="#weekObjective"
+                    aria-expanded="false"
+                    aria-controls="weekObjective"
+                  >
+                    Objetivos
+                  </button>
+                  <div class="collapse" id="weekObjective">
+                    <div class="card card-body" id="objectiveText">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Nam, blanditiis perferendis? Quis expedita voluptate
+                      maxime nesciunt dicta ipsa sequi ea consequuntur atque,
+                      magni sunt dolore natus fuga aliquid temporibus
+                      voluptates?
                     </div>
                   </div>
-                </div>
-                <hr class="my-4">
-                <button type="button" class="btn btn-light" data-toggle="collapse" data-target="#secRecursos"
-                  aria-expanded="false" aria-controls="secRecursos">
-                  Recursos
-                </button>
-                <div class="collapse" id="secRecursos">
-                  <div class="card card-body" id="objectiveText">
-                    <div class="card-group">
-                      <div class="card">
-                        <div class="card-body">
-                          <a onclick="getInfoResource()">
-                            <h5 class="card-title"><i class="fa fa-file-video-o" aria-hidden="true"></i> Recurso 1:
-                              Video
-                              usabilidad</h5>
-                          </a>
-                          <div id="info" class="alert alert-info" hidden>
-                            <strong><a href="http://www.example.com/" target="_blank">Link al
-                                recurso!</a></strong><br />
-                            Pertenece a la <strong>lección 1</strong>, la cual habla de Lorem ipsum dolor sit amet,
-                            consectetur
-                            adipisicing elit. Odit expedita delectus recusandae ipsam cupiditate pariatur, quibusdam
-                            ipsum autem consequuntur id modi est, deleniti quam error molestiae officiis numquam
-                            mollitia natus!
-                          </div>
-                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-                            minima totam officia nisi dolores magni aperiam velit illum tempora quae, corporis natus
-                            nihil fuga tempore aut odit culpa, quia sit!</p>
-                        </div>
-                        <div class="card-footer">
-                          <div class="process" id="process2">
-                            <div class="process-row">
-                              <div class="process-step">
-                                <button style="background-color: #f7f1ed;" type="button"
-                                  class="btn btn-default btn-circle" disabled="disabled"><i
-                                    class="fa fa-user fa-2x"></i></button>
-                                <br /><small>Rubby Casallas<br /><i>Profesor</i></small>
-                              </div>
-                              <div class="process-step">
-                                <button style="background-color: #febeb0;" type="button"
-                                  class="btn btn-default btn-circle" disabled="disabled"><i
-                                    class="fa fa-user fa-2x"></i></button>
-                                <br /><small>Carlos Marín<br /><i>Pedagogo</i></small>
-                              </div>
-                              <div class="process-step">
-                                <button style="background-color: #f7f1ed;" type="button"
-                                  class="btn btn-default btn-circle" disabled="disabled"><i
-                                    class="fa fa-user fa-2x"></i></button>
-                                <br /><small>José Bocanegra<br /><i>Profesor</i></small>
-                              </div>
-                              <div class="process-step">
-                                <button style="background-color: #f7f1ed;" type="button"
-                                  class="btn btn-default btn-circle" disabled="disabled"><i
-                                    class="fa fa-user fa-2x"></i></button>
-                                <br /><small>Violeta Caro<br /><i>Pedagogo</i></small>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                  <!--<hr class="my-4" />
+                  <h3>Responsables:</h3>
+                  <br />
+                  <div class="process">
+                    <div class="process-row">
+                      <div class="process-step">
+                        <button
+                          style="background-color: #f7f1ed"
+                          type="button"
+                          class="btn btn-default btn-circle"
+                          disabled="disabled"
+                        >
+                          <i class="fa fa-user fa-3x"></i>
+                        </button>
+                        <p>Rubby Casallas<br /><i>Profesor</i></p>
+                      </div>
+                      <div class="process-step">
+                        <button
+                          style="background-color: #febeb0"
+                          type="button"
+                          class="btn btn-default btn-circle"
+                          disabled="disabled"
+                        >
+                          <i class="fa fa-user fa-3x"></i>
+                        </button>
+                        <p>Carlos Marín<br /><i>Pedagogo</i></p>
+                      </div>
+                      <div class="process-step">
+                        <button
+                          style="background-color: #febeb0"
+                          type="button"
+                          class="btn btn-default btn-circle"
+                          disabled="disabled"
+                        >
+                          <i class="fa fa-user fa-3x"></i>
+                        </button>
+                        <p>José Bocanegra<br /><i>Profesor</i></p>
+                      </div>
+                      <div class="process-step">
+                        <button
+                          style="background-color: #f7f1ed"
+                          type="button"
+                          class="btn btn-default btn-circle"
+                          disabled="disabled"
+                        >
+                          <i class="fa fa-user fa-3x"></i>
+                        </button>
+                        <p>Violeta Caro<br /><i>Pedagogo</i></p>
+                      </div>
+                    </div>
+                  </div>-->
+                  <hr class="my-4" />
+                  <!--<button
+                    type="button"
+                    class="btn btn-light"
+                    data-toggle="collapse"
+                    data-target="#secRecursos"
+                    aria-expanded="false"
+                    aria-controls="secRecursos"
+                  >
+                    Items
+                  </button>-->
+                  <h4>Items</h4>
+                  <div id="secRecursos">
+                    <div class="card card-body" id="objectiveText">
+                      <div class="card-group">
                         <div class="card">
                           <div class="card-body">
-                            <h5 class="card-title"><i class="fa fa-book" aria-hidden="true"></i>Recurso 2: Lectura
-                              usabilidad</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-                              minima totam officia nisi dolores magni aperiam velit illum tempora quae, corporis natus
-                              nihil fuga tempore aut odit culpa, quia sit!</p>
+                            <a onclick="getInfoResource()">
+                              <h5 class="card-title">
+                                <i
+                                  class="fa fa-file-video-o"
+                                  aria-hidden="true"
+                                ></i>
+                                Item 1: Video usabilidad
+                              </h5>
+                            </a>
+                            <div id="info" class="alert alert-info" hidden>
+                              <strong
+                                ><a
+                                  href="http://www.example.com/"
+                                  target="_blank"
+                                  >Link al recurso!</a
+                                ></strong
+                              ><br />
+                              Pertenece a la <strong>lección 1</strong>, la cual
+                              habla de Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit. Odit expedita delectus
+                              recusandae ipsam cupiditate pariatur, quibusdam
+                              ipsum autem consequuntur id modi est, deleniti
+                              quam error molestiae officiis numquam mollitia
+                              natus!
+                            </div>
+                            <p class="card-text">
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Blanditiis minima totam officia nisi dolores
+                              magni aperiam velit illum tempora quae, corporis
+                              natus nihil fuga tempore aut odit culpa, quia sit!
+                            </p>
                           </div>
                           <div class="card-footer">
                             <div class="process" id="process2">
                               <div class="process-row">
                                 <div class="process-step">
-                                  <button style="background-color: #f7f1ed;" type="button"
-                                    class="btn btn-default btn-circle" disabled="disabled"><i
-                                      class="fa fa-user fa-2x"></i></button>
-                                  <br /><small>Rubby Casallas<br /><i>Profesor</i></small>
+                                  <button
+                                    style="background-color: #f7f1ed"
+                                    type="button"
+                                    class="btn btn-default btn-circle"
+                                    disabled="disabled"
+                                  >
+                                    <i class="fa fa-user fa-2x"></i>
+                                  </button>
+                                  <br /><small
+                                    >Rubby Casallas<br /><i>Profesor</i></small
+                                  >
                                 </div>
                                 <div class="process-step">
-                                  <button style="background-color: #febeb0;" type="button"
-                                    class="btn btn-default btn-circle" disabled="disabled"><i
-                                      class="fa fa-user fa-2x"></i></button>
-                                  <br /><small>José Bocanegra<br /><i>Profesor</i></small>
+                                  <button
+                                    style="background-color: #febeb0"
+                                    type="button"
+                                    class="btn btn-default btn-circle"
+                                    disabled="disabled"
+                                  >
+                                    <i class="fa fa-user fa-2x"></i>
+                                  </button>
+                                  <br /><small
+                                    >Carlos Marín<br /><i>Pedagogo</i></small
+                                  >
                                 </div>
                                 <div class="process-step">
-                                  <button style="background-color: #f7f1ed;" type="button"
-                                    class="btn btn-default btn-circle" disabled="disabled"><i
-                                      class="fa fa-user fa-2x"></i></button>
-                                  <br /><small>Violeta Caro<br /><i>Pedagogo</i></small>
+                                  <button
+                                    style="background-color: #f7f1ed"
+                                    type="button"
+                                    class="btn btn-default btn-circle"
+                                    disabled="disabled"
+                                  >
+                                    <i class="fa fa-user fa-2x"></i>
+                                  </button>
+                                  <br /><small
+                                    >José Bocanegra<br /><i>Profesor</i></small
+                                  >
+                                </div>
+                                <div class="process-step">
+                                  <button
+                                    style="background-color: #f7f1ed"
+                                    type="button"
+                                    class="btn btn-default btn-circle"
+                                    disabled="disabled"
+                                  >
+                                    <i class="fa fa-user fa-2x"></i>
+                                  </button>
+                                  <br /><small
+                                    >Violeta Caro<br /><i>Pedagogo</i></small
+                                  >
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title"><i class="fa fa-tasks" aria-hidden="true"></i> Recurso 3: Ejercicio
-                              usabilidad</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-                              minima totam officia nisi dolores magni aperiam velit illum tempora quae, corporis natus
-                              nihil fuga tempore aut odit culpa, quia sit</p>
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">
+                                <i class="fa fa-book" aria-hidden="true"></i
+                                >Item 2: Lectura usabilidad
+                              </h5>
+                              <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Blanditiis minima totam
+                                officia nisi dolores magni aperiam velit illum
+                                tempora quae, corporis natus nihil fuga tempore
+                                aut odit culpa, quia sit!
+                              </p>
+                            </div>
+                            <div class="card-footer">
+                              <div class="process" id="process2">
+                                <div class="process-row">
+                                  <div class="process-step">
+                                    <button
+                                      style="background-color: #f7f1ed"
+                                      type="button"
+                                      class="btn btn-default btn-circle"
+                                      disabled="disabled"
+                                    >
+                                      <i class="fa fa-user fa-2x"></i>
+                                    </button>
+                                    <br /><small
+                                      >Rubby Casallas<br /><i
+                                        >Profesor</i
+                                      ></small
+                                    >
+                                  </div>
+                                  <div class="process-step">
+                                    <button
+                                      style="background-color: #febeb0"
+                                      type="button"
+                                      class="btn btn-default btn-circle"
+                                      disabled="disabled"
+                                    >
+                                      <i class="fa fa-user fa-2x"></i>
+                                    </button>
+                                    <br /><small
+                                      >José Bocanegra<br /><i
+                                        >Profesor</i
+                                      ></small
+                                    >
+                                  </div>
+                                  <div class="process-step">
+                                    <button
+                                      style="background-color: #f7f1ed"
+                                      type="button"
+                                      class="btn btn-default btn-circle"
+                                      disabled="disabled"
+                                    >
+                                      <i class="fa fa-user fa-2x"></i>
+                                    </button>
+                                    <br /><small
+                                      >Violeta Caro<br /><i>Pedagogo</i></small
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          <div class="card-footer">
-                            <div class="process" id="process2">
-                              <div class="process-row">
-                                <div class="process-step">
-                                  <button style="background-color: #f7f1ed;" type="button"
-                                    class="btn btn-default btn-circle" disabled="disabled"><i
-                                      class="fa fa-user fa-2x"></i></button>
-                                  <br /><small>Rubby Casallas<br /><i>Profesor</i></small>
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">
+                                <i class="fa fa-tasks" aria-hidden="true"></i>
+                                Item 3: Ejercicio usabilidad
+                              </h5>
+                              <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Blanditiis minima totam
+                                officia nisi dolores magni aperiam velit illum
+                                tempora quae, corporis natus nihil fuga tempore
+                                aut odit culpa, quia sit
+                              </p>
+                            </div>
+                            <div class="card-footer">
+                              <div class="process" id="process2">
+                                <div class="process-row">
+                                  <div class="process-step">
+                                    <button
+                                      style="background-color: #f7f1ed"
+                                      type="button"
+                                      class="btn btn-default btn-circle"
+                                      disabled="disabled"
+                                    >
+                                      <i class="fa fa-user fa-2x"></i>
+                                    </button>
+                                    <br /><small
+                                      >Rubby Casallas<br /><i
+                                        >Profesor</i
+                                      ></small
+                                    >
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -388,19 +758,32 @@
           </div>
         </div>
       </div>
-    </div>
-  </main>
+      <!--</div>-->
+      <!--</div>-->
+    </main>
 
-  <!--------Scripts-------->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-  </script>
-</body>
-
+    <!--------Scripts-------->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#sidebarCollapse").on("click", function () {
+          $("#sidebar").toggleClass("active");
+        });
+      });
+    </script>
+  </body>
 </html>
