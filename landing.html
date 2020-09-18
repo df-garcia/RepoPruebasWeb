@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="landing.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <title>Página web</title>
+</head>
+
+<body>
+  <main>
+    <div class="front">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <img id="conectate-img" src="./static/image.png" alt="Conecta-TE icon" />
+        <!-- Button trigger register modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Log in
+        </button>
+      </nav>
+      <!-- end Navbar -->
+      <!-- Log in -->
+      <div class="row">
+      <div class="card col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+        <span class="signup">Log in</span>
+        <hr>
+        <form action="./home.html">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+          <div class="form-check row" style="padding: 45px;">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Stay signed</a></label>
+            <a style="float:right" href="https://cuenta.uniandes.edu.co/Cuenta2/">Forgot your password?</a>
+          </div>
+          <button type="submit" style="margin-top:30px" class="btn btn-primary">Enter</button>
+        </form>
+      </div>
+      <img class="col-4 d-none d-md-block" src="./static/ConectaTE.png"/>
+    </div>
+      <!-- Log in -->
+    </div>
+    <!-- Background -->
+    <div class="behind">
+      <div class="carousel slide" data-ride="carousel" data-interval="10000">
+        <div class="carousel-item active">
+          <img src="./static/ml.jpg" alt="Edificio ML" />
+        </div>
+        <div class="carousel-item" data-interval="9000">
+          <img src="./static/elbobo.png" alt="Estatua El Bobo" />
+        </div>
+        <div class="carousel-item" data-interval="9000">
+          <img src="./static/ml-w.jpg" alt="Conexión entre el edificio ML y el edificio W" />
+        </div>
+        <div class="carousel-item" data-interval="9000">
+          <img src="./static/plazoletaw.png" alt="Plazoleta del edificio W" />
+        </div>
+        <div class="carousel-item" data-interval="9000">
+          <img src="./static/centrodeportivo.png" alt="Cetro deportivo" />
+        </div>
+      </div>
+    </div>
+    <!-- end Background -->
+  </main>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title singup" id="exampleModalLabel">Log in</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form >
+          <div class="form-group">
+            <label for="loginEmail">Email address</label>
+            <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="staySigned">
+            <label class="form-check-label" for="staySigned">Stay signed</label>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-primary" onclick="window.location.href='./home.html'">Log in</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -28,6 +28,16 @@ li a {
   background-size: contain;
 }
 
+.category:hover{
+  background: #2f365f;
+  color: #fff;
+}
+
+.categories-header{
+  padding-top: 5px;
+  padding-bottom: 25px;
+}
+
 .course-card {
   background-color: #f4ebe6;
   margin: 7px;
@@ -35,13 +45,32 @@ li a {
   border-radius: 7px;
 }
 
-.course-link,.course-link:hover{
-  color: black; 
+.course-link,
+.course-link:hover {
+  color: black;
 }
 
 .course-body {
   background-color: #f7f1ed;
   padding-top: 5px;
+}
+
+.course-tags{
+  margin-bottom: 10px;
+}
+
+.tags-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tag {
+  font-size: smaller;
+  padding: 5px 10px;
+  display: inline;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .course-footer {
@@ -53,7 +82,10 @@ li a {
 }
 
 .categories-menu {
+  min-width: 250px;
+  max-width: 250px;
   background-color: #f3f3f3;
+  transition: all 0.3s; 
 }
 
 .categories-header {
