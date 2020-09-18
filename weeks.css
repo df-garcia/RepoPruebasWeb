@@ -43,39 +43,136 @@ li a {
 
 /*Left section (week selector) Vertical navbar*/
 
-#week2 {
-  background-color: #febeb0b9;
-  font-size: 20px;
-  font-weight: bolder;
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
 }
 
-#leftMenu {
-  position: sticky;
-  top: 0;
-  z-index: 0;
-  margin-top: 20px;
-}
-
-.sidebar-heading {
-  background-color: #2f365f;
-}
-
-#sidebarHeading {
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #2f365f;
   color: #fff;
-  font-weight: bold;
-  font-size: 20px;
+  transition: all 0.3s;
 }
 
-.list-group-mine .list-group-item:hover {
-  background-color: #febeb0b9;
+#sidebar.active {
+  margin-left: -250px;
 }
 
-.list-group-mine .list-group-item {
-  background-color: #febeb0;
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #2f365f;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
   color: #fff;
-  font-weight: bold;
+  padding: 10px;
 }
 
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+#sidebar ul li a:hover {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+#margenBotones {
+  margin: 5px;
+}
+
+.btn-info {
+  background-color: #2f365f !important;
+  border-color: #2f365f !important;
+}
+
+#sidebar ul li a:hover {
+  color: #2f365f;
+  background: #fff;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: #2f365f;
+}
+
+.tareaLeccion {
+  display: inline;
+}
+
+p[class="text-center"]:hover {
+  text-decoration: underline;
+}
+
+#esquinasRedondas {
+  border-radius: 25px;
+}
+
+a[id="hoverTareas"]:hover {
+  text-decoration: underline;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.btn-link {
+  text-decoration: none !important;
+  color: black;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #2f365f;
+}
+
+ul.CTAs {
+  padding: 20px;
+}
+
+ul.CTAs a {
+  text-align: center;
+  font-size: 0.9em !important;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+a.download {
+  background: #fff;
+  color: #2f365f;
+}
+
+a.article,
+a.article:hover {
+  background: #2f365f !important;
+  color: #fff !important;
+}
 /*Right section (week detail)*/
 
 #topBarRightMenu {
@@ -103,9 +200,7 @@ li a {
 }
 
 #aSelected {
-
   background-color: lightgray;
-
 }
 
 .jumbotron {
@@ -116,12 +211,10 @@ li a {
 }
 
 button[data-target="#weekObjective"] {
-
   background-color: #2f365f;
   color: #fff;
   text-decoration: none;
   transition-duration: 0.4s;
-
 }
 
 .stepwizard-step p {
@@ -187,12 +280,10 @@ button[data-target="#weekObjective"] {
 }
 
 button[data-target="#secRecursos"] {
-
   background-color: #2f365f;
   color: #fff;
   text-decoration: none;
   transition-duration: 0.4s;
-
 }
 
 #secRecursos a {
