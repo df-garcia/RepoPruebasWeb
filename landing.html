@@ -26,10 +26,6 @@
       <!-- Navbar -->
       <nav class="navbar">
         <img id="conectate-img" src="./static/image.png" alt="Conecta-TE icon" />
-        <!-- Button trigger register modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-          Log in
-        </button>
       </nav>
       <!-- end Navbar -->
       <!-- Log in -->
@@ -39,8 +35,8 @@
           <hr>
           <form action="./home.html">
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+              <label for="InputEmail1">Email address</label>
+              <input type="email" class="form-control" id="InputEmail1" placeholder="Enter email">
             </div>
             <div class="form-group">
               <label for="inputPassword">Password</label>
@@ -85,40 +81,6 @@
     </div>
     <!-- end Background -->
   </main>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="false">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title singup" id="exampleModalLabel">Log in</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form>
-          <div class="form-group">
-            <label for="loginEmail">Email address</label>
-            <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <label for="loginPassword">Password</label>
-            <input type="password" class="form-control" id="loginPassword" placeholder="Password">
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="staySigned">
-            <label class="form-check-label" for="staySigned">Stay signed</label>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='./home.html'">Log in</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 </body>
 
 </html>
