@@ -14,7 +14,7 @@ $(document).ready(function () {
       datasets: [
         {
           data: [2, 4, 3, 2, 3, 4],
-          backgroundColor: ["green", "blue", "gray", "red", "purple", "orange"],
+          backgroundColor: ["rgba(59,131, 189, 0.9)", "rgba(60, 160, 60, 0.9)", "rgba(229,190, 1, 0.9)", "rgba(87,35, 100, 0.8)", "rgba(255,128,0, 0.9)", "rgba(203,50, 52, 0.9)"],
         },
       ],
     },
@@ -53,7 +53,7 @@ $(document).ready(function () {
       datasets: [
         {
           data: [5, 6, 11, 4, 2, 5],
-          backgroundColor: ["green", "blue", "gray", "red", "purple", "orange"],
+          backgroundColor: ["rgba(59,131, 189, 0.9)", "rgba(60, 160, 60, 0.9)", "rgba(229,190, 1, 0.9)", "rgba(87,35, 100, 0.8)", "rgba(255,128,0, 0.9)", "rgba(203,50, 52, 0.9)"],
         },
       ],
     },
@@ -85,7 +85,7 @@ $(document).ready(function () {
       datasets: [
         {
           data: [2, 5, 4, 1],
-          backgroundColor: ["gray", "blue", "green", "red"],
+          backgroundColor: ["gray", "rgba(59,131, 189, 0.9)", "rgba(60, 160, 60, 0.9)", "rgba(203,50, 52, 0.9)"],
         },
       ],
     },
@@ -116,7 +116,7 @@ $(document).ready(function () {
       datasets: [
         {
           data: [2, 4, 5, 4, 1],
-          backgroundColor: ["gray", "orange", "blue", "green", "red"],
+          backgroundColor: ["gray", "rgba(229,190, 1, 0.9)", "rgba(59,131, 189, 0.9)", "rgba(60, 160, 60, 0.9)", "rgba(203,50, 52, 0.9)"],
         },
       ],
     },

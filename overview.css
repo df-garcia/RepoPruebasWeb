@@ -51,15 +51,18 @@ li a {
 }
 
 .chart-container {
-  width: 280px;
-  height: 160px;
-  margin-top: 0px;
-  padding-top: 0px;
+  height: 20vh;
+  width: 18vw;
+  min-width: 280px;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
 }
 
 .card {
   width: 330px;
   height: 220px;
+  min-width: 308px;
 }
 
 .card-body {
@@ -102,4 +105,22 @@ body {
 #btn-activity:hover {
   border-bottom-style: solid;
   border-bottom-color: #3d5a5b;
+}
+
+@media (min-width: 1400px) {
+  .card-chart-container {
+    border-right: 2px solid #ccc;
+  }
+}
+
+@media (min-width: 767px) {
+  .inner-chart-card {
+    border-right: 1px solid #ccc;
+  }
+}
+
+@media (min-width: 576px) {
+  .inner-table-card {
+    border-right: 0.5px solid #ccc;
+  }
 }
