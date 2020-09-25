@@ -41,7 +41,7 @@ li a {
   margin-top: 5px;
 }
 
-/*Left section (week selector) Vertical navbar*/
+/*Left section (sidebar)*/
 
 .wrapper {
   display: flex;
@@ -66,10 +66,11 @@ li a {
   background: #2f365f;
 }
 
+/*
 #sidebar ul.components {
   padding: 20px 0;
   border-bottom: 1px solid #47748b;
-}
+}*/
 
 #sidebar ul p {
   color: #fff;
@@ -77,11 +78,16 @@ li a {
 }
 
 #sidebar ul li a {
+  cursor: pointer;
   padding: 10px;
   font-size: 1.1em;
   display: block;
   text-decoration: none;
   color: #fff;
+}
+
+#sidebar ul li a[class="download"] {
+  color: #2f365f;
 }
 
 #sidebar ul li a:hover {
@@ -114,10 +120,6 @@ a[aria-expanded="true"] {
 
 .tareaLeccion {
   display: inline;
-}
-
-p[class="text-center"]:hover {
-  text-decoration: underline;
 }
 
 #esquinasRedondas {
@@ -179,6 +181,10 @@ a.article:hover {
   margin-top: 10px;
 }
 
+a[class="dropdown-item"] {
+  cursor: pointer;
+}
+
 #topBarRightMenu h4 {
   display: inline;
   float: left;
@@ -192,9 +198,7 @@ a.article:hover {
 }
 
 #dropdownMenuButton {
-  display: inline;
   float: right;
-  margin-right: 10px;
   color: black;
   background-color: #f7f1ed;
 }
@@ -203,12 +207,12 @@ a.article:hover {
   background-color: lightgray;
 }
 
-.jumbotron {
+/*.jumbotron {
   margin-top: 15px;
   background-color: #fff;
   border: 3px solid #2f365f;
   border-radius: 10px;
-}
+}*/
 
 button[data-target="#weekObjective"] {
   background-color: #2f365f;
@@ -257,15 +261,6 @@ button[data-target="#weekObjective"] {
 }
 
 .btn-circle {
-  width: 60px;
-  height: 60px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  border-radius: 15px;
-}
-
-#process2 .btn-circle {
   width: 40px;
   height: 40px;
   text-align: center;
@@ -274,10 +269,10 @@ button[data-target="#weekObjective"] {
   border-radius: 15px;
 }
 
-.jumbotron h3 {
+/*.jumbotron h3 {
   text-align: left;
   margin-left: 40px;
-}
+}*/
 
 button[data-target="#secRecursos"] {
   background-color: #2f365f;
