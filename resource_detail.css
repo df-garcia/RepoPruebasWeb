@@ -1,5 +1,6 @@
 .navbar {
   background-color: #2f365f;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .navbar a {
@@ -9,6 +10,10 @@
 #conectate-img {
   height: 35px;
   padding-left: 0.5rem;
+}
+
+#dropdown_state:hover {
+  text-decoration: none;
 }
 
 .icon-nav {
@@ -41,30 +46,16 @@ li a {
   margin-top: 30px;
 }
 
-.state {
-  align-items: ri;
-}
-
-.estado {
-  background-color: rgba(60, 160, 60, 0.9);
-  padding: 4px;
-  width: 6rem;
-  font-size: x-small;
-  color: white;
-  text-align: right;
-  align-self: center;
-  right: 0;
-}
-
 .left-card {
   background-color: #febeb0;
   padding-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .label {
   font-size: small;
   margin-bottom: 5px;
-  font-weight: 645;
+  font-weight: 600;
 }
 
 .ans {
@@ -103,6 +94,15 @@ li a {
   margin-right: 6px;
   padding-top: 5px;
   text-align: center;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+#estado {
+  background-color: rgba(60, 160, 60, 0.9);
+  width: 6rem;
+  font-size: x-small;
+  color: white;
+  align-self: center;
 }
 
 .card-title {
@@ -115,11 +115,11 @@ li a {
 .card-cont {
   font-size: 0.85rem;
   color: #f7f1ed;
-  text-transform: uppercase;
 }
 
 .lists {
   margin: 0;
+  margin-bottom: -12px;
 }
 
 .links-title {
@@ -163,9 +163,9 @@ li a {
 }
 
 .input-comment {
-  width: 92%;
   margin-left: 12px;
   font-size: 0.85rem;
+  width: 90%;
 }
 
 .comment-message {
@@ -197,4 +197,12 @@ li a {
 
 .com2 {
   margin-left: 50px;
+}
+
+.dropdown-item {
+  font-size: 0.85rem;
+}
+
+.add-btn {
+  height: 10px;
 }

@@ -30,7 +30,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>Recursos</title>
+    <title>Items</title>
   </head>
 
   <body>
@@ -63,7 +63,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#projects">
-                <img class="icon-nav" src="./static/plus (1).png" alt="" />
+                <img class="icon-nav" src="./static/plus(1).png" alt="" />
               </a>
             </li>
             <li class="nav-item">
@@ -72,7 +72,7 @@
               /></a>
             </li>
             <li class="nav-item">
-              <a href="#education" class="nav-link"
+              <a href="./profile.html" class="nav-link"
                 ><img id="foto" src="./static/portrait-1.jpg" alt=""
               /></a>
             </li>
@@ -94,40 +94,39 @@
                 <li class="nav-item">
                   <a
                     class="nav-link disabled"
-                    style="font-size: small;"
+                    style="font-size: small"
                     href="./overview.html"
                     >Overview</a
                   >
                 </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    style="font-size: small;"
-                    href="./resources.html"
-                    >Resources</a
-                  >
-                </li>
+
                 <li class="nav-item">
                   <a
                     class="nav-link disabled"
-                    style="font-size: small;"
+                    style="font-size: small"
                     href="./weeks.html"
                     >Weeks</a
                   >
                 </li>
+
                 <li class="nav-item">
                   <a
-                    class="nav-link disabled"
-                    style="font-size: small;"
-                    href="#"
-                    >People</a
+                    class="nav-link active"
+                    style="font-size: small"
+                    href="./resources.html"
+                    >Items</a
                   >
                 </li>
                 <li class="nav-item">
                   <a
                     class="nav-link disabled"
-                    style="font-size: small;"
-                    href="#"
+                    style="font-size: small"
+                    href="./people.html"
+                    >People</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" style="font-size: small" href="./settings.html"
                     >Settings</a
                   >
                 </li>
@@ -217,8 +216,8 @@
                 role="button"
                 aria-expanded="false"
                 aria-controls="collapseExample"
-                style="background-color: white; color: black;"
-                ><i class="fas fa-plus" style="padding-right: 10px;"></i
+                style="background-color: white; color: black"
+                ><i class="fas fa-plus" style="padding-right: 10px"></i
                 >Añadir</a
               >
             </li>
@@ -229,7 +228,7 @@
         <div id="content">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <button type="button" id="sidebarCollapse" class="btn btn-info">
-              <span>Menú lateral</span>
+              <i class="fa fa-arrows-h" aria-hidden="true"></i>
             </button>
             <div class="container-fluid">
               <button
@@ -252,7 +251,7 @@
                       data-target="#squarespaceModal"
                       id="margenBotones"
                     >
-                      <i class="fas fa-plus" style="padding-right: 5px;"></i>
+                      <i class="fas fa-plus" style="padding-right: 5px"></i>
                       Añadir lección
                     </button>
                   </li>
@@ -318,7 +317,7 @@
                                         name="message"
                                         placeholder="Escribe una breve descripción"
                                         rows="5"
-                                        style="margin-bottom: 10px;"
+                                        style="margin-bottom: 10px"
                                       ></textarea>
                                       <h6 class="pull-right" id="counter">
                                         Máximo 320 caracteres
@@ -418,7 +417,7 @@
               >
                 <div class="card-body">
                   <div class="tareaLeccion">
-                    <i style="color: red;" class="fab fa-html5"></i>
+                    <i style="color: red" class="fab fa-html5"></i>
                     <input
                       type="radio"
                       class="radio2"
@@ -427,7 +426,7 @@
                       checked
                     />
                     <span
-                      style="background-color: rgb(98, 216, 98);"
+                      style="background-color: rgb(98, 216, 98)"
                       class="badge badge-secondary"
                       >Responsable</span
                     >
@@ -447,7 +446,7 @@
                         Para revisión del equipo docente
                       </option></select
                     ><br /><br />
-                    <i class="fab fa-css3" style="color: blue;"></i>
+                    <i class="fab fa-css3" style="color: blue"></i>
                     <input
                       type="radio"
                       class="radio2"
@@ -456,7 +455,7 @@
                       checked
                     />
                     <span
-                      style="background-color: rgb(98, 216, 98);"
+                      style="background-color: rgb(98, 216, 98)"
                       class="badge badge-secondary"
                       >Responsable</span
                     >
@@ -484,12 +483,12 @@
                       aria-expanded="false"
                       aria-controls="collapseExample"
                     >
-                      <i class="fas fa-plus" style="padding-right: 5px;"></i>
+                      <i class="fas fa-plus" style="padding-right: 5px"></i>
                       Añadir una tarea</button
                     ><br />
                     <div
                       class="collapse"
-                      style="padding-top: 5px;"
+                      style="padding-top: 5px"
                       id="collapseLeccion1"
                     >
                       <div class="card text-center">
@@ -539,7 +538,7 @@
                                       name="message"
                                       placeholder="Escribe una breve descripción"
                                       rows="5"
-                                      style="margin-bottom: 10px;"
+                                      style="margin-bottom: 10px"
                                     ></textarea>
                                     <h6 class="pull-right" id="counter">
                                       Máximo 320 caracteres
@@ -583,7 +582,7 @@
                   <div class="tareaLeccion">
                     <i
                       class="fab fa-bootstrap"
-                      style="color: rgb(168, 5, 168);"
+                      style="color: rgb(168, 5, 168)"
                     ></i>
                     <input
                       type="radio"
@@ -593,7 +592,7 @@
                       checked
                     />
                     <span
-                      style="background-color: rgb(98, 216, 98);"
+                      style="background-color: rgb(98, 216, 98)"
                       class="badge badge-secondary"
                       >Responsable</span
                     >
@@ -621,12 +620,12 @@
                       aria-expanded="false"
                       aria-controls="collapseExample"
                     >
-                      <i class="fas fa-plus" style="padding-right: 5px;"></i>
+                      <i class="fas fa-plus" style="padding-right: 5px"></i>
                       Añadir una tarea</button
                     ><br />
                     <div
                       class="collapse"
-                      style="padding-top: 5px;"
+                      style="padding-top: 5px"
                       id="collapseLeccion2"
                     >
                       <div class="card text-center">
@@ -676,7 +675,7 @@
                                       name="message"
                                       placeholder="Escribe una breve descripción"
                                       rows="5"
-                                      style="margin-bottom: 10px;"
+                                      style="margin-bottom: 10px"
                                     ></textarea>
                                     <h6 class="pull-right" id="counter">
                                       Máximo 320 caracteres
@@ -720,7 +719,7 @@
                   <div class="tareaLeccion">
                     <i
                       class="fab fa-js-square"
-                      style="color: rgba(248, 228, 48, 0.863);"
+                      style="color: rgba(248, 228, 48, 0.863)"
                     ></i>
                     <input
                       type="radio"
@@ -730,7 +729,7 @@
                       checked
                     />
                     <span
-                      style="background-color: rgb(98, 216, 98);"
+                      style="background-color: rgb(98, 216, 98)"
                       class="badge badge-secondary"
                       >Responsable</span
                     >
@@ -759,12 +758,12 @@
                       aria-expanded="false"
                       aria-controls="collapseExample"
                     >
-                      <i class="fas fa-plus" style="padding-right: 5px;"></i>
+                      <i class="fas fa-plus" style="padding-right: 5px"></i>
                       Añadir una tarea</button
                     ><br />
                     <div
                       class="collapse"
-                      style="padding-top: 5px;"
+                      style="padding-top: 5px"
                       id="collapseLeccion3"
                     >
                       <div class="card text-center">
@@ -814,7 +813,7 @@
                                       name="message"
                                       placeholder="Escribe una breve descripción"
                                       rows="5"
-                                      style="margin-bottom: 10px;"
+                                      style="margin-bottom: 10px"
                                     ></textarea>
                                     <h6 class="pull-right" id="counter">
                                       Máximo 320 caracteres
