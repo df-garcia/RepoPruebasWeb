@@ -107,6 +107,15 @@ body {
   border-bottom-color: #3d5a5b;
 }
 
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
 @media (min-width: 1400px) {
   .card-chart-container {
     border-right: 2px solid #ccc;

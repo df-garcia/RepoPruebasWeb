@@ -73,8 +73,13 @@ li a {
   border-radius: 10px;
 }
 
+.tag:hover{
+  background-color: lightslategrey;
+  color: white;
+}
+
 .course-footer {
-  padding-top: 5px;
+  margin: 5px 5px 0px;
 }
 
 .courses-header {
@@ -94,10 +99,11 @@ li a {
   margin-left: 5px;
 }
 
-.mini-member {
+.card-avatar {
   height: 30px;
   width: 30px;
   display: block;
   border-radius: 50%;
   background-size: contain;
+  margin: 3px;
 }
