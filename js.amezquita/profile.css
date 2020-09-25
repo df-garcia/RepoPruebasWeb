@@ -1,5 +1,6 @@
 html{
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 .nav-tabs .nav-item{
     width: 200px;
@@ -28,10 +29,8 @@ html{
     visibility: hidden;
     position: absolute;
     font-size: 30px;
-    margin-top: 120px;
-    left:23%;
-    right:35%;
-    margin-left: 10vh;
+    left:110px;
+    top:230px;
     font-weight: 200;
 }
 #profile:hover #hoverprofile{
