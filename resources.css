@@ -116,10 +116,6 @@ a:focus {
   display: block;
 }
 
-#margenBotones {
-  margin: 5px;
-}
-
 .btn-info {
   background-color: #2f365f !important;
   border-color: #2f365f !important;
