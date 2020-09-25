@@ -1,5 +1,6 @@
 .navbar {
   background-color: #2f365f;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .navbar a {
@@ -9,6 +10,10 @@
 #conectate-img {
   height: 35px;
   padding-left: 0.5rem;
+}
+
+#dropdown_state:hover {
+  text-decoration: none;
 }
 
 .icon-nav {
@@ -88,8 +93,8 @@ li a {
   margin-left: 6px;
   margin-right: 6px;
   padding-top: 5px;
+  padding-bottom: -5px;
   text-align: center;
-  height: 50px;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -97,7 +102,7 @@ li a {
   align-items: ri;
 }
 
-.estado {
+#estado {
   background-color: rgba(60, 160, 60, 0.9);
   width: 6rem;
   font-size: x-small;
@@ -163,9 +168,9 @@ li a {
 }
 
 .input-comment {
-  width: 92%;
   margin-left: 12px;
   font-size: 0.85rem;
+  width: 90%;
 }
 
 .comment-message {
@@ -201,4 +206,8 @@ li a {
 
 .dropdown-item {
   font-size: 0.85rem;
+}
+
+.add-btn {
+  height: 10px;
 }
