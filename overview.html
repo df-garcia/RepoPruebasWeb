@@ -64,7 +64,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#projects">
-                <img class="icon-nav" src="./static/plus (1).png" alt="" />
+                <img class="icon-nav" src="./static/plus(1).png" alt="" />
               </a>
             </li>
             <li class="nav-item">
@@ -73,7 +73,7 @@
               /></a>
             </li>
             <li class="nav-item">
-              <a href="#education" class="nav-link"
+              <a href="./profile.html" class="nav-link"
                 ><img id="foto" src="./static/portrait-1.jpg" alt=""
               /></a>
             </li>
@@ -117,12 +117,15 @@
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" style="font-size: small" href="./people.html"
+                  <a
+                    class="nav-link disabled"
+                    style="font-size: small"
+                    href="./people.html"
                     >People</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" style="font-size: small" href="#"
+                  <a class="nav-link disabled" style="font-size: small" href="./settings.html"
                     >Settings</a
                   >
                 </li>
@@ -135,9 +138,9 @@
       <div class="row justify-content-center">
         <div class="col-12" id="overview-control">
           <h4 style="margin-left: 0px">Overview</h4>
-          <nav class="nav nav-pills flex-column flex-sm-row">
+          <nav class="nav nav-pills flex-xs-row">
             <a
-              class="flex-sm-fill text-sm-center nav-link disabled"
+              class="text-sm-center nav-link disabled"
               style="font-size: small"
               id="btn-summary"
               href="overview.html"
@@ -145,7 +148,7 @@
               Summary
             </a>
             <a
-              class="flex-sm-fill text-sm-center nav-link disabled"
+              class="text-sm-center nav-link disabled"
               style="font-size: small"
               id="btn-activity"
               href="overview_activity.html"
@@ -160,17 +163,16 @@
       <div class="row">
         <div class="col-12">
           <div class="container-fluid">
-            <div class="row justify-content-center" id="overview-tasks">
+            <div class="row" id="overview-tasks">
               <div
-                class="col-6 center-block"
-                style="border-right: 2px solid #ccc"
+                class="col-12 col-xl-6 order-2 order-xl-1 center-block card-chart-container"
               >
+                <br class="d-none d-sm-block d-xl-none" />
                 <h5 style="margin-left: 11px; margin-bottom: 20px">Tasks</h5>
                 <div class="container-fluid">
                   <div class="row justify-content-center">
                     <div
-                      class="col-6 d-flex justify-content-center"
-                      style="border-right: 1px solid #ccc"
+                      class="col-12 col-md-6 d-flex justify-content-center inner-chart-card"
                     >
                       <div class="card border-light">
                         <div class="card-body">
@@ -185,7 +187,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-6 d-flex justify-content-center">
+                    <div class="col-12 col-md-6 d-flex justify-content-center">
                       <div class="card border-light">
                         <div class="card-body">
                           <p style="color: grey; padding-left: 10px">
@@ -204,10 +206,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-12 col-xl-6 order-1 order-xl-2 center-block">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-6" style="border-right: 0.5px solid #ccc">
+                    <div class="col-12 col-sm-6 inner-table-card">
                       <h5 style="margin-left: 0px; margin-bottom: 20px">
                         Digest
                       </h5>
@@ -231,7 +233,7 @@
                           </span>
                         </a>
                         <a
-                          href="#"
+                          href="./overview_activity.html"
                           class="list-group-item list-group-item-action justify-content-between align-items-center d-flex"
                         >
                           Unreaded notifications
@@ -241,7 +243,8 @@
                         </a>
                       </div>
                     </div>
-                    <div class="col-6" style="padding-left: 30px">
+                    <div class="col-12 col-sm-6" style="padding-left: 15px">
+                      <br class="d-block d-sm-none" />
                       <h5 style="margin-bottom: 20px">Breakdown</h5>
                       <table class="table table-sm table-hover">
                         <thead>
@@ -269,22 +272,15 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="container-fluid">
-            <div class="row" id="overview-tasks">
-              <div class="col-6" style="border-right: 2px solid #ccc">
+              <div
+                class="col-12 col-xl-6 order-3 order-xl-3 center-block card-chart-container"
+              >
                 <br />
                 <h5 style="margin-left: 11px; margin-bottom: 20px">Weeks</h5>
                 <div class="container-fluid">
                   <div class="row">
                     <div
-                      class="col-6 d-flex justify-content-center"
-                      style="border-right: 1px solid #ccc"
+                      class="col-12 col-md-6 d-flex justify-content-center inner-chart-card"
                     >
                       <div class="card border-light">
                         <div class="card-body">
@@ -299,7 +295,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-6 d-flex justify-content-center">
+                    <div class="col-12 col-md-6 d-flex justify-content-center">
                       <div class="card border-light">
                         <div class="card-body">
                           <p style="color: grey; padding-left: 10px">
@@ -318,7 +314,6 @@
                   </div>
                 </div>
               </div>
-              <div class="col-5"></div>
             </div>
           </div>
         </div>
@@ -351,17 +346,19 @@
           <div class="modal-body">
             <div class="tareaLeccion">
               <i style="color: red" class="fab fa-html5"></i>
-              <input type="radio" class="radio2" name="test2" id="b1" checked />
+              <input type="radio" class="radio2" name="test2" checked />
               <span
                 style="background-color: rgb(98, 216, 98)"
                 class="badge badge-secondary"
                 >Responsable</span
               >
-              <a href="https://df-garcia.github.io/RepoPruebasWeb/resources.html" style="color: black" id="hoverTareas"
+              <a
+                href="https://df-garcia.github.io/RepoPruebasWeb/resources.html"
+                style="color: black"
                 >Lectura sobre HTML, conceptos básicos</a
               >
 
-              <select class="custom-select-sm" id="esquinasRedondas">
+              <select class="custom-select-sm">
                 <option selected>Estado</option>
                 <option value="1">Listo para montaje</option>
                 <option value="2">Pendiente</option>
@@ -380,7 +377,10 @@
                 class="badge badge-secondary"
                 >Responsable</span
               >
-              <a href="https://df-garcia.github.io/RepoPruebasWeb/resources.html" style="color: black" id="hoverTareas"
+              <a
+                href="https://df-garcia.github.io/RepoPruebasWeb/resources.html"
+                style="color: black"
+                id="hoverTareas"
                 >Lectura sobre CSS, selectores</a
               >
 
@@ -396,10 +396,9 @@
                   Para revisión del equipo docente
                 </option></select
               ><br /><br />
-              <button type="button" class="btn text-center">
-                <i class="fas fa-plus" style="padding-right: 5px"></i>
+              <a href="./resources.html" class="btn btn-secondary text-center">
                 Añadir una tarea
-              </button>
+              </a>
             </div>
           </div>
           <div class="modal-footer">
