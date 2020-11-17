@@ -7,6 +7,8 @@ import ProjectsCard from "./ProjectsCard/ProjectsCard";
 import url from "../../../commons";
 import axios from "axios";
 
+import authHeader from "../../../services/auth-header";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -59,20 +61,30 @@ const ProjectsGrid = (props) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get(url + "/courses").then((result) => {
-      setData(result.data);
-      const tempcategories = [];
-      result.data.forEach((course) => {
-        if (
-          tempcategories.filter((e) => e.name === course.program).length === 0
-        ) {
-          tempcategories.push({ name: course.program, quantity: 1 });
-        } else {
-          tempcategories.find((e) => e.name === course.program).quantity += 1;
-        }
+    axios
+      .get(url + "/courses/userCourses", {
+        headers: authHeader(),
+      })
+      .then((result) => {
+        //console.log(result.data.data);
+        setData(result.data.data);
+        const tempcategories = [];
+        result.data.data.forEach((course) => {
+          //console.log(course);
+          if (
+            tempcategories.filter((e) => e.name === course.Program.code)
+              .length === 0
+          ) {
+            tempcategories.push({ name: course.Program.code, quantity: 1 });
+          } else {
+            tempcategories.find(
+              (e) => e.name === course.Program.code
+            ).quantity += 1;
+          }
+        });
+        //console.log(tempcategories);
+        setCategories(tempcategories);
       });
-      setCategories(tempcategories);
-    });
   }, []);
 
   return (
@@ -107,11 +119,7 @@ const ProjectsGrid = (props) => {
           </Grid>
           <Grid container direction="row" className={classes.courselist}>
             {data.map((course) => (
-              <ProjectsCard
-                data={course}
-                parentprops={props}
-                key={course._id}
-              />
+              <ProjectsCard data={course} parentprops={props} key={course.id} />
             ))}
           </Grid>
         </Grid>

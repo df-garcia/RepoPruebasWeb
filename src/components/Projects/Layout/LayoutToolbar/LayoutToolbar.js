@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
+
 import { makeStyles } from "@material-ui/core/styles";
 import mainLogo from "../../../../assets/images/conectate_logo.png";
 import avatarImg from "../../../../assets/images/avatar.jpg";
 import AppBar from "@material-ui/core/AppBar";
 import Avatar from "@material-ui/core/Avatar";
 import Toolbar from "@material-ui/core/Toolbar";
-//import SearchIcon from "@material-ui/icons/Search";
 import Typography from "@material-ui/core/Typography";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Divider from "@material-ui/core/Divider";
@@ -16,6 +16,8 @@ import Menu from "@material-ui/core/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import AddIcon from "@material-ui/icons/Add";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+
+import AuthService from "../../../../services/auth.service";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,6 +81,11 @@ const LayoutToolbar = (props) => {
     props.history.push(route);
   };
 
+  const handleLogout = () => {
+    AuthService.logout();
+    props.history.go(0);
+  };
+
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
@@ -124,7 +131,7 @@ const LayoutToolbar = (props) => {
               <AccountCircleIcon />
             </MenuItem>
             <Divider />
-            <MenuItem onClick={() => handleRoute("/login")}>
+            <MenuItem onClick={handleLogout}>
               <Typography className={classes.menuItems}>Logout</Typography>
               <ExitToAppIcon />
             </MenuItem>

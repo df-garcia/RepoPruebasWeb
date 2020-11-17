@@ -106,15 +106,6 @@ const FormDialog = (props) => {
     setResponsible(value);
   };
 
-  const [itemType, setItemType] = React.useState("");
-
-  //Function to handle the changes on the appbar
-  const handleChangeItemType = (event) => {
-    setItemType(event.target.value);
-  };
-
-  const [status, setStatus] = React.useState("");
-
   const [sCode, setSCode] = React.useState("");
   const [sName, setSName] = React.useState("");
   const [sDesc, setSDesc] = React.useState("");
@@ -123,10 +114,6 @@ const FormDialog = (props) => {
   const [sDed, setSDed] = React.useState("");
   const [sStatus, setSStatus] = React.useState("");
   const [sPeople, setSPeople] = React.useState([]);
-
-  const handleChangeStatus = (event) => {
-    setStatus(event.target.value);
-  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -158,8 +145,6 @@ const FormDialog = (props) => {
       newItem.duration = sLength;
       newItem.dedication = sDed;
       newItem.status = sStatus;
-
-      console.log(newItem);
       props.func(newItem);
     }
     setOpen(false);
@@ -245,7 +230,7 @@ const FormDialog = (props) => {
             onChange={handleChangeDesc}
           />
           <Select
-            value={itemType}
+            value={sType}
             onChange={handleChangeType}
             displayEmpty
             className={classes.selectEmpty}
@@ -259,7 +244,7 @@ const FormDialog = (props) => {
           </Select>
           <br></br>
           <div>
-            {itemType == "Video" ? (
+            {sType == "Video" ? (
               <TextField
                 autoFocus
                 margin="dense"
@@ -289,7 +274,7 @@ const FormDialog = (props) => {
             onChange={handleChangeDed}
           />
           <Select
-            value={status}
+            value={sStatus}
             onChange={handleChangeStatus2}
             displayEmpty
             className={classes.selectEmpty}
@@ -318,14 +303,13 @@ const FormDialog = (props) => {
             multiple
             displayEmpty
             className={classes.selectEmpty}
-            value={responsible}
+            value={sPeople}
             onChange={handleChangePeople}
             input={<Input />}
             renderValue={(selected) => {
               if (selected.length === 0) {
                 return "People in Charge";
               }
-
               return selected.join(", ");
             }}
             MenuProps={MenuProps}

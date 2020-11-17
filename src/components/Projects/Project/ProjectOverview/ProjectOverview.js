@@ -8,9 +8,13 @@ import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import Tabs from "@material-ui/core/Tabs";
 import AntTab from "../../Layout/AntTabs/AntTab/AntTab";
+import Backdrop from "@material-ui/core/Backdrop";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import OverviewActivity from "./OverviewActivity/OverviewActivity";
 import OverviewSummary from "./OverviewSummary/OverviewSummary";
+
+import authHeader from "../../../../services/auth-header";
 
 const InnerTabs = withStyles({
   indicator: {
@@ -33,269 +37,366 @@ const useStyles = makeStyles((theme) => ({
   content: {
     width: "100%",
   },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: "#fff",
+  },
 }));
 
 const ProjectOverview = (props) => {
-  // Variables para cambiar
-  const userEmail = "user2@test.com";
-
-  //Styles for the page
+  // Styles for the page
   const classes = useStyles();
 
-  //Value for the appbar
+  // Value for the appbar
   const [tabValue, setTabValue] = useState(0);
 
-  //Value for the project weeks
-  const [weeksData, setWeeksData] = useState({});
+  // Value for the backdrop
+  const [isLoading, setIsLoading] = useState(false);
 
-  //Value for all items section
+  // Values for the itemStatus categories
+  const [itemStatus, setItemStatus] = useState({
+    titles: [],
+    colors: [],
+  });
+
+  // Values for the weekStatus categories
+  const [weekStatus, setWeekStatus] = useState({
+    titles: [],
+    colors: [],
+  });
+
+  // Value for the project weeks
+  const [allWeeksData, setAllWeeksData] = useState({});
+
+  // Value for the project weeks
+  const [myWeeksData, setMyWeeksData] = useState({});
+
+  // Value for all items section
   const [allItemsData, setAllItemsData] = useState({});
 
-  //Value for my items section
+  // Value for my items section
   const [myItemsData, setMyItemsData] = useState({});
 
-  //Value for breakdown section
+  // Value for breakdown section
   const [breakdownData, setBreakdownData] = useState([]);
 
-  //Value for the activity section
+  // Value for the activity section
   const [activityData, setActivityData] = useState([]);
 
-  // Items info
-  const itemsLabels = [
-    "En edición",
-    "En Plataforma",
-    "Escaleta en construccion",
-    "Listo para montaje",
-    "Para Revisión",
-    "Pendiente",
-    "Escaleta en construcción",
+  // Default value for activityData
+  const defaultActivityData = [
+    {
+      date: "Monday, 16 November",
+      logItems: [
+        {
+          hour: "5:30 pm",
+          eventLogPrimaryText:
+            "José Marín added an Item - Item 3: Video Bootstrap",
+          eventLogSecondaryText:
+            "Description: This is the first video of Bootstrap",
+        },
+        {
+          hour: "4:00 pm",
+          eventLogPrimaryText:
+            "José Marín edited an Week - Week 1: Week 1 (HTML)",
+          eventLogSecondaryText: "Description: First Week of the course",
+        },
+        {
+          hour: "2:00 pm",
+          eventLogPrimaryText: "José Marín added an Item - Item 4: Video React",
+          eventLogSecondaryText:
+            "Description: This is the first video of React",
+        },
+      ],
+    },
+    {
+      date: "Friday, 14 November",
+      logItems: [
+        {
+          hour: "6:30 am",
+          eventLogPrimaryText: "José Marín added an Item - Item 1: Video HTML",
+          eventLogSecondaryText: "Description: This is the first video of HTML",
+        },
+        {
+          hour: "8:00 am",
+          eventLogPrimaryText:
+            "Martín Huertas added an Item - Item 2: Video CSS",
+          eventLogSecondaryText: "Description: This is the first video of CSS",
+        },
+      ],
+    },
   ];
-  const itemsBackgroundColor = [
-    "rgba(59,131, 189, 0.9)",
-    "rgba(60, 160, 60, 0.9)",
-    "rgba(229,190, 1, 0.9)",
-    "rgba(87,35, 100, 0.8)",
-    "rgba(255,128,0, 0.9)",
-    "rgba(203,50, 52, 0.9)",
-  ];
 
-  // Weeks info
-  const weeksLabels = ["Assigned", "Started", "Completed"];
-  const weeksBackgroundColor = [
-    "gray",
-    "rgba(59,131, 189, 0.9)",
-    "rgba(60, 160, 60, 0.9)",
-    "rgba(203,50, 52, 0.9)",
-  ];
-
-  //Function to load the activity data
+  // Get itemStatus data
   useEffect(() => {
-    const activityArray = [];
-    axios
-      .get(backendURL + "/courses/" + props.match.params.id + "/eventLog")
-      .then((response) => {
-        const responseData = response.data;
-        for (let eventLogId in responseData) {
-          let eventLog = responseData[eventLogId];
-          let eventLogPrimaryText =
-            eventLog.eventAuthor.name +
-            " " +
-            eventLog.eventAction.toString().toLowerCase() +
-            " a " +
-            eventLog.eventTarget.eventObjectType.toString().toLowerCase();
-          let eventLogSecondaryText = "";
-          if (
-            eventLog.eventTarget.eventObjectType.toString() === "ITEM" ||
-            eventLog.eventTarget.eventObjectType.toString() === "lesson"
-          ) {
-            eventLogSecondaryText = eventLog.eventTarget.eventObject.title.toString();
-          }
-          const activityLogItem = {
-            eventLogPrimaryText: eventLogPrimaryText,
-            eventLogSecondaryText: eventLogSecondaryText,
-          };
-          activityArray.push(activityLogItem);
-        }
-        setActivityData(activityArray);
-      });
-  }, []);
-
-  //Function to load the breakdown data
-  useEffect(() => {
-    let breakdownMap = new Map();
-    axios
-      .get(backendURL + "/courses/" + props.match.params.id + "/weeks")
-      .then((response) => {
-        const responseData = response.data;
-        for (let weekId in responseData) {
-          let week = responseData[weekId];
-          let weekLessons = week.lessons;
-          for (let lessonId in weekLessons) {
-            let lesson = weekLessons[lessonId];
-            let lessonItems = lesson.items;
-            for (let lessonItemId in lessonItems) {
-              let item = lessonItems[lessonItemId];
-              let itemResponsables = item.responsables;
-              for (let itemResponsableId in itemResponsables) {
-                let responsable = itemResponsables[itemResponsableId];
-                if (!breakdownMap.has(responsable.name)) {
-                  breakdownMap.set(responsable.name, 1);
-                } else {
-                  breakdownMap.set(
-                    responsable.name,
-                    breakdownMap.get(responsable.name) + 1
-                  );
-                }
-              }
-            }
-          }
-        }
-        let breakdownArray = Array.from(breakdownMap, ([name, items]) => ({
-          name,
-          items,
-        }));
-        breakdownArray.sort((a, b) => b.items - a.items);
-        if (breakdownArray.length > 5) {
-          breakdownArray.length = 5;
-        }
-        setBreakdownData(breakdownArray);
-      });
-  }, []);
-
-  //Function to load the all items data
-  useEffect(() => {
-    const allItemsValues = itemsLabels.reduce(
-      (ac, a) => ({ ...ac, [a]: [] }),
-      {}
-    );
-    const myItemsValues = itemsLabels.reduce(
-      (ac, a) => ({ ...ac, [a]: [] }),
-      {}
-    );
-    axios
-      .get(backendURL + "/courses/" + props.match.params.id + "/weeks")
-      .then((response) => {
-        const responseData = response.data;
-        for (let weekId in responseData) {
-          let week = responseData[weekId];
-          let weekLessons = week.lessons;
-          for (let lessonId in weekLessons) {
-            let lesson = weekLessons[lessonId];
-            let lessonItems = lesson.items;
-            for (let lessonItemId in lessonItems) {
-              let item = lessonItems[lessonItemId];
-              allItemsValues[item.status].push(item);
-              let itemResponsables = item.responsables;
-              for (let itemResponsableId in itemResponsables) {
-                let responsable = itemResponsables[itemResponsableId];
-                if (responsable.email === userEmail) {
-                  if (myItemsValues[item.status].indexOf(item) === -1) {
-                    myItemsValues[item.status].push(item);
-                  }
-                }
-              }
-            }
-          }
-        }
-        // Set all items state
-        const allItData = Object.values(allItemsValues).map(
-          (array) => array.length
-        );
-        const queryAllItemsData = {
-          labels: itemsLabels,
-          datasets: [
-            {
-              data: allItData,
-              backgroundColor: itemsBackgroundColor,
-              hoverBackgroundColor: itemsBackgroundColor,
-            },
-          ],
-        };
-        setAllItemsData(queryAllItemsData);
-
-        // Set my items state
-        const myItData = Object.values(myItemsValues).map(
-          (array) => array.length
-        );
-        const queryMyItemsData = {
-          labels: itemsLabels,
-          datasets: [
-            {
-              data: myItData,
-              backgroundColor: itemsBackgroundColor,
-              hoverBackgroundColor: itemsBackgroundColor,
-            },
-          ],
-        };
-        setMyItemsData(queryMyItemsData);
-      });
-  }, []);
-
-  //Function to load the weeks data
-  useEffect(() => {
-    const weeksValues = weeksLabels.reduce((ac, a) => ({ ...ac, [a]: [] }), {});
+    setIsLoading(true);
 
     axios
-      .get(backendURL + "/courses/" + props.match.params.id + "/weeks")
-      .then((response) => {
-        const responseData = response.data;
-        responseData.forEach((week) => {
-          weeksValues[week.status].push(week);
+      .get(backendURL + "/itemstatus/", {
+        headers: authHeader(),
+      })
+      .then((result) => {
+        const itemTitles = [];
+        const itemColors = [];
+        result.data.data.forEach((iStatus) => {
+          itemTitles.push(iStatus.title);
+          itemColors.push(iStatus.color);
         });
-        const data = Object.values(weeksValues).map((array) => array.length);
-        const queryWeeksData = {
-          labels: weeksLabels,
-          datasets: [
-            {
-              data: data,
-              backgroundColor: weeksBackgroundColor,
-              hoverBackgroundColor: weeksBackgroundColor,
-            },
-          ],
-        };
-        setWeeksData(queryWeeksData);
+        setItemStatus({
+          titles: itemTitles,
+          colors: itemColors,
+        });
       });
   }, []);
+
+  // Get weekStatus data
+  useEffect(() => {
+    setIsLoading(true);
+
+    axios
+      .get(backendURL + "/weekstatus/", {
+        headers: authHeader(),
+      })
+      .then((result) => {
+        const weekTitles = [];
+        const weekColors = [];
+        result.data.data.forEach((wStatus) => {
+          weekTitles.push(wStatus.title);
+          weekColors.push(wStatus.color);
+        });
+        setWeekStatus({
+          titles: weekTitles,
+          colors: weekColors,
+        });
+      });
+  }, []);
+
+  // Get user items data
+  useEffect(() => {
+    setIsLoading(true);
+
+    axios
+      .get(
+        backendURL + "/items/courses/" + props.match.params.id + "/useritems",
+        {
+          headers: authHeader(),
+        }
+      )
+      .then((result) => {
+        const itemStatusCount = [];
+        itemStatus.titles.forEach((title, index) => {
+          let currentItemStatusCount = 0;
+          result.data.data.forEach((item) => {
+            if (item.ItemStatus.title === title) {
+              currentItemStatusCount++;
+            }
+          });
+          itemStatusCount[index] = currentItemStatusCount;
+        });
+
+        setMyItemsData({
+          labels: itemStatus.titles,
+          datasets: [
+            {
+              data: itemStatusCount,
+              backgroundColor: itemStatus.colors,
+              hoverBackgroundColor: itemStatus.colors,
+            },
+          ],
+        });
+      });
+  }, [props, itemStatus]);
+
+  // Get all items data
+  useEffect(() => {
+    setIsLoading(true);
+    axios
+      .get(
+        backendURL + "/items/courses/" + props.match.params.id + "/allitems",
+        {
+          headers: authHeader(),
+        }
+      )
+      .then((result) => {
+        const itemStatusCount = [];
+        itemStatus.titles.forEach((title, index) => {
+          let currentItemStatusCount = 0;
+          result.data.data.forEach((item) => {
+            if (item.ItemStatus.title === title) {
+              currentItemStatusCount++;
+            }
+          });
+          itemStatusCount[index] = currentItemStatusCount;
+        });
+
+        setAllItemsData({
+          labels: itemStatus.titles,
+          datasets: [
+            {
+              data: itemStatusCount,
+              backgroundColor: itemStatus.colors,
+              hoverBackgroundColor: itemStatus.colors,
+            },
+          ],
+        });
+      });
+  }, [props, itemStatus]);
+
+  // Get user weeks data
+  useEffect(() => {
+    setIsLoading(true);
+
+    axios
+      .get(
+        backendURL + "/weeks/courses/" + props.match.params.id + "/userweeks",
+        {
+          headers: authHeader(),
+        }
+      )
+      .then((result) => {
+        const weekStatusCount = [];
+        weekStatus.titles.forEach((title, index) => {
+          let currentWeekStatusCount = 0;
+          result.data.data.forEach((week) => {
+            if (week.WeekStatus.title === title) {
+              currentWeekStatusCount++;
+            }
+          });
+          weekStatusCount[index] = currentWeekStatusCount;
+        });
+
+        setMyWeeksData({
+          labels: weekStatus.titles,
+          datasets: [
+            {
+              data: weekStatusCount,
+              backgroundColor: weekStatus.colors,
+              hoverBackgroundColor: weekStatus.colors,
+            },
+          ],
+        });
+      });
+  }, [props, weekStatus]);
+
+  // Get all weeks data
+  useEffect(() => {
+    setIsLoading(true);
+
+    axios
+      .get(
+        backendURL + "/weeks/courses/" + props.match.params.id + "/allweeks",
+        {
+          headers: authHeader(),
+        }
+      )
+      .then((result) => {
+        const weekStatusCount = [];
+        weekStatus.titles.forEach((title, index) => {
+          let currentWeekStatusCount = 0;
+          result.data.data.forEach((week) => {
+            if (week.WeekStatus.title === title) {
+              currentWeekStatusCount++;
+            }
+          });
+          weekStatusCount[index] = currentWeekStatusCount;
+        });
+
+        setAllWeeksData({
+          labels: weekStatus.titles,
+          datasets: [
+            {
+              data: weekStatusCount,
+              backgroundColor: weekStatus.colors,
+              hoverBackgroundColor: weekStatus.colors,
+            },
+          ],
+        });
+      });
+  }, [props, weekStatus]);
+
+  // Get breakdown data
+  useEffect(() => {
+    setIsLoading(true);
+
+    axios
+      .get(
+        backendURL + "/items/courses/" + props.match.params.id + "/breakdown",
+        {
+          headers: authHeader(),
+        }
+      )
+      .then((result) => {
+        const breakdownArray = [];
+        result.data.data.slice(0, 5).forEach((row, index) => {
+          breakdownArray[index] = {
+            name: row.user.name,
+            items: row.assignedItems.length,
+          };
+        });
+        setBreakdownData(breakdownArray);
+
+        setIsLoading(false);
+      });
+  }, [props]);
+
+  // Get activityData
+  // useEffect(() => {
+  //   setActivityData(defaultActivityData);
+  // }, [defaultActivityData]);
 
   //Function to handle the changes on the appbar
   const handleChange = (event, newValue) => {
     setTabValue(newValue);
   };
 
+  const handleBackdropClose = () => {
+    setIsLoading(false);
+  };
+
   return (
-    <Grid container>
-      <Grid item xs={12} className={classes.root}>
-        <Typography variant="h5" className={classes.courseText}>
-          Overview
-        </Typography>
+    <React.Fragment>
+      <Grid container>
+        <Grid item xs={12} className={classes.root}>
+          <Typography variant="h5" className={classes.courseText}>
+            Overview
+          </Typography>
+        </Grid>
+        <Grid item xs={12} className={classes.content}>
+          <AppBar position="static" color="transparent" elevation={0}>
+            <InnerTabs
+              className={classes.tabs}
+              value={tabValue}
+              onChange={handleChange}
+              aria-label="Options"
+            >
+              <AntTab label="Summary" />
+              <AntTab label="Activity" />
+            </InnerTabs>
+          </AppBar>
+        </Grid>
+        <Grid item xs={12} className={classes.content}>
+          {tabValue === 0 ? (
+            <OverviewSummary
+              handleChange={handleChange}
+              breakdownData={breakdownData}
+              myItemsData={myItemsData}
+              allItemsData={allItemsData}
+              myWeeksData={myWeeksData}
+              allWeeksData={allWeeksData}
+            />
+          ) : (
+            <OverviewActivity activityData={defaultActivityData} />
+          )}
+        </Grid>
       </Grid>
-      <Grid item xs={12} className={classes.content}>
-        <AppBar position="static" color="transparent" elevation={0}>
-          <InnerTabs
-            className={classes.tabs}
-            value={tabValue}
-            onChange={handleChange}
-            aria-label="Options"
-          >
-            <AntTab label="Summary" />
-            <AntTab label="Activity" />
-          </InnerTabs>
-        </AppBar>
-      </Grid>
-      <Grid item xs={12} className={classes.content}>
-        {tabValue === 0 ? (
-          <OverviewSummary
-            handleChange={handleChange}
-            breakdownData={breakdownData}
-            myItemsData={myItemsData}
-            allItemsData={allItemsData}
-            weeksData={weeksData}
-          />
-        ) : (
-          <OverviewActivity activityData={activityData} />
-        )}
-      </Grid>
-    </Grid>
+      <Backdrop
+        className={classes.backdrop}
+        open={isLoading}
+        onClick={handleBackdropClose}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
+    </React.Fragment>
   );
 };
 

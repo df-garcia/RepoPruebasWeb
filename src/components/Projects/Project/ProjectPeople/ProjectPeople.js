@@ -7,8 +7,10 @@ import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import PeoplePeople from "./PeoplePeople/PeoplePeople";
 import PeopleTeams from "./PeopleTeams/PeopleTeams";
+import PeopleGallery from "./PeopleGallery/PeopleGallery";
 import axios from "axios";
 import urlBackend from "../../../../commons";
+import authHeader from "../../../../services/auth-header";
 
 const InnerTabs = withStyles({
   indicator: {
@@ -46,15 +48,18 @@ const ProjectPeople = (props) => {
   const [datosBack, setDatosBack] = useState([]);
 
   useEffect(() => {
-    {
-      axios
-        .get(urlBackend + "/courses/" + props.match.params.id)
-        .then((response) => {
-          const responseData = response.data;
-          const participantes = responseData.participants;
-          setDatosBack(participantes);
-        });
-    }
+    axios
+      .get(
+        urlBackend + "/users/courses/" + props.match.params.id + "/allusers",
+        {
+          headers: authHeader(),
+        }
+      )
+      .then((response) => {
+        const responseData = response.data.data;
+        setDatosBack(responseData);
+        console.log(responseData);
+      });
   }, []);
 
   const [tabValue, setTabValue] = useState(0);
@@ -64,18 +69,63 @@ const ProjectPeople = (props) => {
     setTabValue(newValue);
   };
 
+  // Function to change titles shown, depending on the tab that has been clicked
+  const handleTabTitles = (currentTab) => {
+    let title;
+    if (currentTab === 0) {
+      title = (
+        <Typography variant="h5" className={classes.courseText}>
+          People on this project
+        </Typography>
+      );
+    } else if (currentTab === 1) {
+      title = (
+        <Typography variant="h5" className={classes.courseText}>
+          Teams on this project
+        </Typography>
+      );
+    } else {
+      title = (
+        <Typography variant="h5" className={classes.courseText}>
+          Project Gallery
+        </Typography>
+      );
+    }
+    return title;
+  };
+
+  /*const deleteUser = (userId) => {
+    currentParticipants = datosBack;
+
+    // hacer filter
+
+    setDatosBack(currentParticipants);
+
+    axios.get("/currentCourse");
+
+    axios.put(currentCourse);
+  };*/
+
+  // Function to change content shown, depending on the tab that has been clicked
+  const handleTabContent = (currentTab) => {
+    let content;
+    /*deleteUser={deleteUser}*/
+    if (currentTab === 0) {
+      content = (
+        <PeoplePeople datosBack={datosBack} setDatosBack={setDatosBack} />
+      );
+    } else if (currentTab === 1) {
+      content = <PeopleTeams datosBack={datosBack} />;
+    } else {
+      content = <PeopleGallery />;
+    }
+    return content;
+  };
+
   return (
     <Grid container>
       <Grid item xs={12} className={classes.root}>
-        {tabValue === 0 ? (
-          <Typography variant="h5" className={classes.courseText}>
-            People on this project
-          </Typography>
-        ) : (
-          <Typography variant="h5" className={classes.courseText}>
-            Teams on this project
-          </Typography>
-        )}
+        {handleTabTitles(tabValue)}
       </Grid>
       <Grid item xs={12} className={classes.content}>
         <AppBar position="static" color="transparent" elevation={0}>
@@ -87,15 +137,12 @@ const ProjectPeople = (props) => {
           >
             <AntTab label="People" />
             <AntTab label="Teams" />
+            <AntTab label="Gallery" />
           </InnerTabs>
         </AppBar>
       </Grid>
       <Grid item xs={12} className={classes.content}>
-        {tabValue === 0 ? (
-          <PeoplePeople datosBack={datosBack} />
-        ) : (
-          <PeopleTeams datosBack={datosBack} />
-        )}
+        {handleTabContent(tabValue)}
       </Grid>
     </Grid>
   );

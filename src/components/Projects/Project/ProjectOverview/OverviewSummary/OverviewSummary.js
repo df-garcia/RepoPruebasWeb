@@ -61,61 +61,6 @@ const OverviewSummary = (props) => {
   //Styles for the page
   const classes = useStyles();
 
-  //Donut tasks data
-  // const tasksData = {
-  //   labels: [
-  //     "En Edición",
-  //     "En Plataforma",
-  //     "Escaleta en Cons.",
-  //     "Para montaje",
-  //     "Para Revisión",
-  //     "Pendiente",
-  //   ],
-  //   datasets: [
-  //     {
-  //       data: [1, 2, 1, 2, 1, 3],
-  //       backgroundColor: [
-  //         "rgba(59,131, 189, 0.9)",
-  //         "rgba(60, 160, 60, 0.9)",
-  //         "rgba(229,190, 1, 0.9)",
-  //         "rgba(87,35, 100, 0.8)",
-  //         "rgba(255,128,0, 0.9)",
-  //         "rgba(203,50, 52, 0.9)",
-  //       ],
-  //       hoverBackgroundColor: [
-  //         "rgba(59,131, 189, 0.9)",
-  //         "rgba(60, 160, 60, 0.9)",
-  //         "rgba(229,190, 1, 0.9)",
-  //         "rgba(87,35, 100, 0.8)",
-  //         "rgba(255,128,0, 0.9)",
-  //         "rgba(203,50, 52, 0.9)",
-  //       ],
-  //     },
-  //   ],
-  // };
-
-  //Donut weeks data
-  // const weeksData = {
-  //   labels: ["No date", "Started", "Completed", "Late"],
-  //   datasets: [
-  //     {
-  //       data: [1, 2, 2, 1],
-  //       backgroundColor: [
-  //         "gray",
-  //         "rgba(59,131, 189, 0.9)",
-  //         "rgba(60, 160, 60, 0.9)",
-  //         "rgba(203,50, 52, 0.9)",
-  //       ],
-  //       hoverBackgroundColor: [
-  //         "gray",
-  //         "rgba(59,131, 189, 0.9)",
-  //         "rgba(60, 160, 60, 0.9)",
-  //         "rgba(203,50, 52, 0.9)",
-  //       ],
-  //     },
-  //   ],
-  // };
-
   //Donut config
   const options = {
     title: {
@@ -130,7 +75,7 @@ const OverviewSummary = (props) => {
       position: "left",
       fontSize: 20,
       onClick: (e, item) => {
-        alert(`Item with text ${item.text} and index ${item.index} clicked`);
+        //alert(`Item with text ${item.text} and index ${item.index} clicked`);
       },
       onHover: (e, item) => {
         if (e && e.target) {
@@ -141,12 +86,6 @@ const OverviewSummary = (props) => {
     responsive: true,
     maintainAspectRatio: true,
   };
-
-  // const rows = [
-  //   { name: "Nicolás Potes", items: 159 },
-  //   { name: "Mario Hurtado", items: 237 },
-  //   { name: "Santiago Bolaños", items: 262 },
-  // ];
 
   return (
     <Grid container>
@@ -276,7 +215,7 @@ const OverviewSummary = (props) => {
                       Mine
                     </Typography>
                     <Doughnut
-                      data={props.weeksData}
+                      data={props.myWeeksData}
                       options={options}
                       width={100}
                       height={60}
@@ -291,7 +230,7 @@ const OverviewSummary = (props) => {
                       All Weeks
                     </Typography>
                     <Doughnut
-                      data={props.weeksData}
+                      data={props.allWeeksData}
                       options={options}
                       width={100}
                       height={60}

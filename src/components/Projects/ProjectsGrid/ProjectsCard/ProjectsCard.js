@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 const ProjectsCard = (props) => {
   const classes = useStyles();
   const goToProject = () => {
-    props.parentprops.history.push("/projects/" + props.data._id);
+    props.parentprops.history.push("/projects/" + props.data.id);
   };
 
   return (
@@ -94,7 +94,7 @@ const ProjectsCard = (props) => {
                   className={classes.tagcontent}
                   align="center"
                 >
-                  {props.data.program}
+                  {props.data.Program.code}
                 </Typography>
               </Grid>
             </Grid>
@@ -110,7 +110,7 @@ const ProjectsCard = (props) => {
           </Grid>
           <Grid item xs={12}>
             <AvatarGroup max={6} spacing="medium">
-              {props.data.participants.map((member) => (
+              {props.data.Users.map((member) => (
                 <Tooltip
                   arrow
                   title={

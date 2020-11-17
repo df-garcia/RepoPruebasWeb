@@ -7,9 +7,9 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import videoImg from "../../../../assets/images/video.png";
 import textImg from "../../../../assets/images/text.png";
+import audioImg from "../../../../assets/images/audio.png";
 import AddItem from "../../utils/Modals/ModalAgregarItem";
 
 const Lesson = (props) => {
@@ -29,9 +29,7 @@ const Lesson = (props) => {
   }));
 
   const funcNewItem = (newItem) => {
-    let actualItems = [...items];
-    actualItems.push(newItem);
-    setItems(actualItems);
+    setItems([...items, newItem]);
   };
 
   const classes = useStyles();
@@ -45,6 +43,9 @@ const Lesson = (props) => {
       if (item.itemType.itemType === "Video") {
         videoType = "Video type: " + item.itemType.additionalInfo;
         img = videoImg
+      }
+      if (item.itemType.itemType === "Audio") {
+        img = audioImg
       }
       cardItems.push(
         <div key={i}>
@@ -60,8 +61,11 @@ const Lesson = (props) => {
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
+            <Grid container>
+            <Grid item xs={6}>
               <Typography>{item.description}</Typography>
-              <Container>
+            </Grid>
+            <Grid item xs={3}>
                 <Typography color="textSecondary">
                   {"Type: " + item.itemType.itemType}
                 </Typography>
@@ -69,15 +73,16 @@ const Lesson = (props) => {
                 <Typography color="textSecondary">
                   {"Expected length: " + item.duration + " minutes"}
                 </Typography>
-              </Container>
-              <Container>
+            </Grid>
+            <Grid item xs={3}>
                 <Typography color="textSecondary">
                   {"Expected dedication time: " + item.dedication + " minutes"}
                 </Typography>
                 <Typography color="textSecondary">
                   {"Status: " + item.status}
                 </Typography>
-              </Container>
+              </Grid>
+            </Grid>
             </AccordionDetails>
             <AccordionDetails>
               <Grid container >

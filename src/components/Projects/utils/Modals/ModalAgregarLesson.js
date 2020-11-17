@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -32,17 +32,9 @@ const FormDialog = (props) => {
     setOpen(true);
   };
 
-  let newLesson = {
-    id: -1,
-    name: "",
-    items: [],
-  };
-
-
-  const handleClose = (accion) => {
-      if (accion === 1) {
-      newLesson.id = 0;
-      newLesson.name = name;
+  const handleClose = (event) => {
+    if (event.target.innerText == "SAVE CHANGES") {
+      let newLesson = { id: 0, title: name, items: [] };
       props.func(newLesson);
     }
     setOpen(false);
@@ -50,10 +42,8 @@ const FormDialog = (props) => {
 
   const onChange = (evt) => {
     setName(evt.target.value);
-  }
-  const LessonName = () => {
-    return name;
-  }
+  };
+
   const classes = useStyles();
   return (
     <div>
@@ -87,10 +77,10 @@ const FormDialog = (props) => {
         </DialogContent>
         <br></br>
         <DialogActions>
-          <Button onClick={() => handleClose(2)} color="primary">
+          <Button onClick={handleClose} name="cancel" color="primary">
             Cancel
           </Button>
-          <Button onClick={() => handleClose(1)}  color="primary">
+          <Button onClick={handleClose} name="save" color="primary">
             Save Changes
           </Button>
         </DialogActions>

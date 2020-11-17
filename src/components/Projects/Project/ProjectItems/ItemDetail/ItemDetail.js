@@ -68,11 +68,47 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const item1 = {
+  code: "MT1ISW_L3",
+  title: "Aplicaciones web",
+  description:
+    "Lectura complementaria en alguno de los temas anteriores  (a verificar el biblio)",
+  itemType: {
+    itemType: "Lectura",
+  },
+  responsables: [
+    {
+      _id: "5f965bf1c9f94a083af3d09c",
+      name: "Juan Arango",
+      email: "user2@test.com",
+      role: "professor",
+      __v: 0,
+    },
+  ],
+  duration: "20",
+  dedication: "25",
+  status: "Pendiente",
+  responsablesEmail: ["user1@test.com"],
+  links: ["hola"],
+  comments: [
+    {
+      content: "New Comment",
+      publicationDate: "10/11/2020",
+      author: {
+        _id: "5f965bf1c9f94a083af3d09c",
+        name: "Juan Arango",
+        email: "user2@test.com",
+        role: "professor",
+        __v: 0,
+      },
+    },
+  ],
+};
+
 const ItemDetail = (props) => {
   //Styles for the page
   const classes = useStyles();
-
-  const [item, setItem] = React.useState(props.detail);
+  const [item, setItem] = React.useState(item1);
 
   const setstatus = (stat) => {
     setItem({ ...item, status: stat });
@@ -315,6 +351,7 @@ const ItemDetail = (props) => {
           className={classes.courseText}
           display="inline"
           onDoubleClick={handleEditTitle}
+          onBlur={() => console.log("Me salí")}
         >
           {item.title}
           <Typography variant="overline" gutterBottom display="inline">

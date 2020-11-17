@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import AppBar from "@material-ui/core/AppBar";
@@ -12,6 +12,13 @@ import ProjectWeeks from "../Project/ProjectWeeks/ProjectWeeks";
 import ProjectItems from "../Project/ProjectItems/ProjectItems";
 import ProjectPeople from "../Project/ProjectPeople/ProjectPeople";
 import ProjectSettings from "../Project/ProjectSettings/ProjectSetting";
+
+import ItemDetail from "../Project/ProjectItems/ItemDetail/ItemDetail";
+
+import url from "../../../commons";
+import axios from "axios";
+
+import authHeader from "../../../services/auth-header";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,6 +39,9 @@ const Project = (props) => {
   const classes = useStyles();
 
   //Value for the appbar
+  const [course, setCourse] = useState({});
+
+  //Value for the appbar
   const [value, setValue] = useState(0);
   //Function to handle the changes on the appbar
   const handleChange = (event, newValue) => {
@@ -43,11 +53,22 @@ const Project = (props) => {
     props.history.push("/projects/" + props.match.params.id + newRoute);
   };
 
+  useEffect(() => {
+    const currentCourseId = props.match.params.id;
+    axios
+      .get(url + "/courses/" + currentCourseId, {
+        headers: authHeader(),
+      })
+      .then((result) => {
+        setCourse(result.data.data);
+      });
+  }, [props]);
+
   return (
     <Grid container>
       <Grid item xs={12} className={classes.root}>
         <Typography variant="h5" className={classes.courseText}>
-          ISIS3710 - Seguimiento Proyecto Coursera
+          {course.code} - {course.name}
         </Typography>
       </Grid>
       <Grid item xs={12} className={classes.content}>
@@ -73,6 +94,10 @@ const Project = (props) => {
               label="Settings"
               onClick={() => handleRouteChange("/settings")}
             />
+            <AntTab
+              label="Item Detail"
+              onClick={() => handleRouteChange("/itemdetail")}
+            />
           </AntTabs>
         </AppBar>
       </Grid>
@@ -83,6 +108,7 @@ const Project = (props) => {
           <Route path="/projects/:id/items" component={ProjectItems} />
           <Route path="/projects/:id/people" component={ProjectPeople} />
           <Route path="/projects/:id/settings" component={ProjectSettings} />
+          <Route path="/projects/:id/itemdetail" component={ItemDetail} />
           <Redirect from="/projects/:id" to="/projects/:id/overview" />
         </Switch>
       </Grid>
